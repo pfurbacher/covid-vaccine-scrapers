@@ -20,6 +20,13 @@ const sites = {
         zip: "02459",
         signUpLink: "https://www.holtzmanmedical.org/covid19",
     },
+    "pr_MFpAkwJEAEaLWrzldda5NR|lo_PvEMHaWWJ0qh3--f8FQb8h": {
+        name: "Holtzman Medical Group - Educational Staff Clinics",
+        street: "295 California St",
+        city: "Newton",
+        zip: "02458",
+        signUpLink: "https://www.holtzmanmedical.org/covid19",
+    },
     "pr_CUmBnwtlz0C16bif5EU0IR|lo_X6zHHncQnkqyLp-rvpi1_R": {
         name: "AFC Urgent Care Springfield",
         street: "415 Cooley St, Unit 3",
@@ -69,7 +76,10 @@ const sites = {
     },
 };
 
+const providerIds = Object.keys(sites).join('","');
+
 module.exports = {
     scraperName,
     sites,
+    providerIds,
 };

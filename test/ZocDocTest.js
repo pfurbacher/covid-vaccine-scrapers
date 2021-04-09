@@ -1,4 +1,5 @@
 const scraper = require("../no-browser-site-scrapers/ZocDoc/index");
+const { sites } = require("../no-browser-site-scrapers/ZocDoc/config");
 const helper = require("../no-browser-site-scrapers/ZocDoc/zocdocBase");
 const generator = require("../no-browser-site-scrapers/ZocDoc/zocdoc-config-generator");
 const { expect } = require("chai");
@@ -40,19 +41,14 @@ describe("ZocDoc Provider availability test using scraper and canned data", func
     it("should provide availability for each site, and the results objects structure should conform", async function () {
         const results = await scraper(false, testFetchService);
 
-        const expected = [
-            true,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-            false,
-        ];
         const hasAvailability = Object.values(results).map(
             (result) => result.hasAvailability
         );
+
+        // The mock results contain data in the first result object
+        const expected = Array(hasAvailability.length).fill(false);
+        expected[0] = true;
+
         const afterTime = moment();
 
         expect(hasAvailability).is.deep.equal(expected);
@@ -81,7 +77,9 @@ describe("ZocDoc Provider availability test using scraper and canned data", func
 });
 
 describe("ZocDoc Testing zocdocBase with live data", function () {
-    it("should provide availability for each site listed in config.js", async function () {
+    const beforeTime = moment();
+
+    it("should provide availability for each site, and the results objects structure should conform", async function () {
         const providerAvailabilityJson = await helper.fetchAvailability();
 
         const providerAvailability = helper.parseAvailability(
@@ -93,7 +91,7 @@ describe("ZocDoc Testing zocdocBase with live data", function () {
         // );
 
         expect(Object.keys(providerAvailability).length).equals(
-            Object.keys(config.sites).length
+            Object.keys(sites).length
         );
     });
 });
