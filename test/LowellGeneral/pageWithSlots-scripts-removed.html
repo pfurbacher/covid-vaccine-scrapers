@@ -1,0 +1,604 @@
+<html lang="en" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="msapplication-config" content="none">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Patient Scheduling Portal</title>
+
+	<link href="/Content/images/favicon.ico" rel="icon" type="image/x-icon">
+	<link rel="stylesheet" href="https://atlas.microsoft.com/sdk/javascript/mapcontrol/2/atlas.min.css" type="text/css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+
+	<link href="/Content/font-awesome.min.css" rel="stylesheet">
+
+	<link href="/Content/bootstrap.css" rel="stylesheet">
+
+	<link href="/Content/angucomplete.css" rel="stylesheet">
+<link href="/Content/select2.css" rel="stylesheet">
+<link href="/Content/offcanvas.css" rel="stylesheet">
+
+	<link href="/Content/angular.rangeSlider.css" rel="stylesheet">
+<link href="/Content/mhd.css" rel="stylesheet">
+<link href="/Content/nouislider.css" rel="stylesheet">
+
+<link href="/Content/default.css" rel="stylesheet">
+
+	
+
+	
+
+	
+
+	
+	
+<style type="text/css"></style></head>
+
+<body background="https://mhdprod.blob.core.windows.net/d2cimages/d2cimages/637492870975838704whitebackground.jpg" style="">
+		<input type="hidden" id="hdnRecaptchaPublicKey" value="6Lfds-sSAAAAANko09fcC-a0YlQGrrnuUmhixduY">
+
+
+	<div class="container alert-container"></div>
+	<div id="ng-app" data-ng-app="directToConsumer" class="ng-scope">
+		<div class="container">
+			<div class="col-lg-12 col-sm-12 page-content-container ng-scope" data-ng-controller="d2CBodyCtrl">
+				<header>
+					<div id="large-logo-container" style="display:none;">
+						<div class="brand-logo"><img alt="lowellgeneralvaccine.myhealthdirect.com Logo" src="https://mhdprod.blob.core.windows.net/d2cimages/d2cimages/637498150648398410mvp-400x338.png"></div>
+						<div class="text-center pageheader">
+							<span class="fa fa-pencil"></span>
+							SCHEDULE AN APPOINTMENT
+						</div>
+					</div>
+
+					<div id="small-logo-container" style="" class="hidden-print">
+						<div class="brand-logo-small">
+								<img alt="lowellgeneralvaccine.myhealthdirect.com Logo" src="https://mhdprod.blob.core.windows.net/d2cimages/d2cimages/637498150649335952mvp-400x338.png">
+						</div>
+						<div class="pageheader">
+							<span class="fa fa-lock"></span>
+							SECURE BOOKING
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</header>
+
+				<div class="page-content-main" style="">
+
+<div class="">
+	<div data-ng-controller="d2CShellCtrl" style="clear: both" class="ng-scope">
+		<div data-ng-show="shellService.isBusy" class="page-splash ng-hide" role="alert" aria-busy="true" aria-label="Loading">
+			<div data-cc-spinner="{lines:7, length:0, radius:19, scale:1.25, width:14, color:'#E68A00', opacity:0.3, shadow:true}" class="processing-indicator"><div class="spinner" role="progressbar" style="position: relative; width: 0px; z-index: 2000000000; left: 0px; top: 0px;"><div style="position: absolute; top: -7px; opacity: 0.3; animation: 1s linear 0s infinite normal none running opacity-100-30-0-7;"><div style="position: absolute; width: 14px; height: 14px; background: rgb(0, 0, 0); box-shadow: rgb(0, 0, 0) 0px 0px 4px; transform-origin: left center; transform: rotate(0deg) translate(19px, 0px); border-radius: 7px; top: 2px;"></div><div style="position: absolute; width: 14px; height: 14px; background: rgb(230, 138, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(0deg) translate(19px, 0px); border-radius: 7px;"></div></div><div style="position: absolute; top: -7px; opacity: 0.3; animation: 1s linear 0s infinite normal none running opacity-100-30-1-7;"><div style="position: absolute; width: 14px; height: 14px; background: rgb(0, 0, 0); box-shadow: rgb(0, 0, 0) 0px 0px 4px; transform-origin: left center; transform: rotate(51deg) translate(19px, 0px); border-radius: 7px; top: 2px;"></div><div style="position: absolute; width: 14px; height: 14px; background: rgb(230, 138, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(51deg) translate(19px, 0px); border-radius: 7px;"></div></div><div style="position: absolute; top: -7px; opacity: 0.3; animation: 1s linear 0s infinite normal none running opacity-100-30-2-7;"><div style="position: absolute; width: 14px; height: 14px; background: rgb(0, 0, 0); box-shadow: rgb(0, 0, 0) 0px 0px 4px; transform-origin: left center; transform: rotate(102deg) translate(19px, 0px); border-radius: 7px; top: 2px;"></div><div style="position: absolute; width: 14px; height: 14px; background: rgb(230, 138, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(102deg) translate(19px, 0px); border-radius: 7px;"></div></div><div style="position: absolute; top: -7px; opacity: 0.3; animation: 1s linear 0s infinite normal none running opacity-100-30-3-7;"><div style="position: absolute; width: 14px; height: 14px; background: rgb(0, 0, 0); box-shadow: rgb(0, 0, 0) 0px 0px 4px; transform-origin: left center; transform: rotate(154deg) translate(19px, 0px); border-radius: 7px; top: 2px;"></div><div style="position: absolute; width: 14px; height: 14px; background: rgb(230, 138, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(154deg) translate(19px, 0px); border-radius: 7px;"></div></div><div style="position: absolute; top: -7px; opacity: 0.3; animation: 1s linear 0s infinite normal none running opacity-100-30-4-7;"><div style="position: absolute; width: 14px; height: 14px; background: rgb(0, 0, 0); box-shadow: rgb(0, 0, 0) 0px 0px 4px; transform-origin: left center; transform: rotate(205deg) translate(19px, 0px); border-radius: 7px; top: 2px;"></div><div style="position: absolute; width: 14px; height: 14px; background: rgb(230, 138, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(205deg) translate(19px, 0px); border-radius: 7px;"></div></div><div style="position: absolute; top: -7px; opacity: 0.3; animation: 1s linear 0s infinite normal none running opacity-100-30-5-7;"><div style="position: absolute; width: 14px; height: 14px; background: rgb(0, 0, 0); box-shadow: rgb(0, 0, 0) 0px 0px 4px; transform-origin: left center; transform: rotate(257deg) translate(19px, 0px); border-radius: 7px; top: 2px;"></div><div style="position: absolute; width: 14px; height: 14px; background: rgb(230, 138, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(257deg) translate(19px, 0px); border-radius: 7px;"></div></div><div style="position: absolute; top: -7px; opacity: 0.3; animation: 1s linear 0s infinite normal none running opacity-100-30-6-7;"><div style="position: absolute; width: 14px; height: 14px; background: rgb(0, 0, 0); box-shadow: rgb(0, 0, 0) 0px 0px 4px; transform-origin: left center; transform: rotate(308deg) translate(19px, 0px); border-radius: 7px; top: 2px;"></div><div style="position: absolute; width: 14px; height: 14px; background: rgb(230, 138, 0); box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 1px; transform-origin: left center; transform: rotate(308deg) translate(19px, 0px); border-radius: 7px;"></div></div></div></div>
+		</div>
+		<div data-ng-show="!shellService.isBusy" role="alert" aria-busy="false" aria-live="assertive" aria-label="Loading Complete" class=""></div>
+		<div data-ng-view="" class="ng-scope"><div class="row top-pad ng-scope">
+    <div class="col-md-6 col-xs-12">
+        <div class="pull-left">
+            <img class="img-responsive-provider" ng-show="calendarDetails.imageFilePath" ng-src="https://mhdprod.blob.core.windows.net/serviceimage/service91879/picture1637492678138092788.png" alt="Lowell General  Vaccine " src="https://mhdprod.blob.core.windows.net/serviceimage/service91879/picture1637492678138092788.png">
+            <img class="img-responsive-provider ng-hide" ng-hide="calendarDetails.imageFilePath" src="/Content/images/image-placeholder.png" alt="Lowell General  Vaccine ">
+        </div>
+        <div class="pull-left provider-details col-md-8 col-xs-8" style="padding-left:0; padding-right:0;">
+            <div class="provider-name">
+                <h5 class="ng-binding">Lowell General  Vaccine </h5>
+            </div>
+            <div class="provider-specialty ng-binding">Infectious Diseases</div>
+            <div class="provider-practice ng-binding">Lowell</div>
+            <div class="provider-phone ng-binding ng-hide" ng-show="!calendarDetails.suppressPhoneNumber">
+                <span class="fa fa-phone"></span>
+                978-942-2488
+            </div>
+            <div class="ng-hide" ng-show="calendarDetails.bio.length">
+                <a role="button" tabindex="0" href="javascript:void(0)" data-html="true" data-placement="bottom" data-toggle="popover" data-trigger="focus" data-content="" data-original-title="" title="">View Bio</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-xs-12 hidden-xs hidden-sm">
+        <div class="col-md-7 col-xs-12" ng-show="!calendarDetails.suppressAddress">
+            <div class="visible-xs visible-sm">
+                <h4>Location:</h4>
+            </div>
+            <div class="provider-address">
+                <h5 class="ng-binding">1001 Pawtucket Blvd East</h5>
+                
+                <h5 class="ng-binding">Lowell, Massachusetts 01854</h5>
+                <div ng-show="calendarDetails.milesAway > 0.0" class="ng-hide">
+                    <span class="fa fa-map-marker"></span> <span class="filter-provider-mile ng-binding">0.00 mi</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5 hidden-xs" ng-show="!calendarDetails.suppressAddress">
+            <div id="providerMap" class="img-responsive mapboxgl-map atlas-map" style="position:relative; width:288px; height:152px;" role="application" aria-label="Map Application"><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate atlas-map-canvas-container"><canvas class="mapboxgl-canvas atlas-map-canvas" tabindex="0" aria-label="Interactive Map" width="800" height="600" aria-describedby="atlas-map-state atlas-map-style atlas-map-shortcuts" alt="Interactive Map" style="width: 400px; height: 300px;"></canvas><div tabindex="-1" aria-hidden="true" id="atlas-map-state" class="hidden-accessible-element" aria-live="polite"><p>Location: Williamsburg, MA.</p></div><div tabindex="-1" aria-hidden="true" id="atlas-map-style" class="hidden-accessible-element" aria-live="polite"><p>Map style: road.</p></div><div tabindex="-1" aria-hidden="true" id="atlas-map-shortcuts" class="hidden-accessible-element" aria-live="polite">Map shortcuts:
+Zoom out: hyphen.
+Zoom in: plus.
+Pan right 100 pixels: right arrow.
+Pan left 100 pixels: left arrow.
+Pan up 100 pixels: up arrow.
+Pan down 100 pixels: down arrow.
+Rotate 15 degrees clockwise: shift + right arrow.
+Rotate 15 degrees counter clockwise: shift + left arrow.
+Increase pitch 10 degrees: shift + up arrow.
+Decrease pitch 10 degrees: shift + down arrow.
+Toggle verbose map state: control + alt + D.
+Jump focus to the map: Escape.</div><div class="marker-collection-container"><div class="marker-container mapboxgl-marker mapboxgl-marker-anchor-center" style="transform: translate(-50%, -50%) translate(200px, 150px) rotateX(0deg) rotateZ(0deg);"><img src="/Content/images/mhdpushpin.png" style="pointer-events: none;"></div></div></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl" style="display: none;"><a class="mapboxgl-ctrl-logo mapboxgl-compact" target="_blank" rel="noopener nofollow" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"></div></div><div class="atlas-control-container"><div class="top-left subcontrol-container"></div><div class="top-right subcontrol-container"></div><div class="bottom-left subcontrol-container"></div><div class="bottom-right subcontrol-container"><div class="azure-maps-control-container light" aria-label="Zoom Control" style="flex-direction: column;"><button class="azure-maps-control-button zoom-in" title="Zoom In" alt="Zoom In" type="button"></button><button class="azure-maps-control-button zoom-out" title="Zoom Out" alt="Zoom Out" type="button"></button></div><div class="azure-maps-control-container light" aria-label="Map Style Control"><div class="style-options icons hidden-accessible-element" aria-label="Style Options"><button title="Road" alt="Road" type="button" class="azure-maps-control-button"><img src="https://atlas.microsoft.com/styles/thumbnails/road/2018-06-21.png" alt="Road"></button><button title="Grayscale (Light)" alt="Grayscale (Light)" type="button" class="azure-maps-control-button"><img src="https://atlas.microsoft.com/styles/thumbnails/grayscale_light/2019-04-25.png" alt="Grayscale (Light)"></button><button title="Grayscale (Dark)" alt="Grayscale (Dark)" type="button" class="azure-maps-control-button"><img src="https://atlas.microsoft.com/styles/thumbnails/grayscale_dark/2018-06-27.png" alt="Grayscale (Dark)"></button><button title="Night" alt="Night" type="button" class="azure-maps-control-button"><img src="https://atlas.microsoft.com/styles/thumbnails/night/2018-11-30.png" alt="Night"></button><button title="Terra" alt="Terra" type="button" class="azure-maps-control-button"><img src="https://atlas.microsoft.com/styles/thumbnails/road_shaded_relief/2019-01-25.png" alt="Terra"></button></div><button class="azure-maps-control-button curr-style" title="Select Style" alt="Select Style" type="button"><img src="https://atlas.microsoft.com/styles/thumbnails/road/2018-06-21.png" alt="Road"><div class="icon"></div></button></div></div><div class="non-fixed subcontrol-container"><div class="map-copyright light"><div>©2020 TomTom</div><a href="https://feedback.azuremaps.com" target="_blank" rel="noopener">Improve this map</a></div><div class="azure-map-logo"></div></div></div></div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-md-12 col-xs-12 text-right" style="margin-top:20px;">
+            <button class="btn btn-default ng-hide" type="button" data-target="#otherLocationsModal" data-toggle="modal" data-ng-show="otherLocations.length > 0">
+                <span class="fa fa-hospital-o"></span>
+                OTHER LOCATIONS
+            </button>
+            <button class="btn btn-default" type="button" data-ng-click="getDirections()" ng-show="!calendarDetails.suppressAddress" style="display: none;">
+                <span class="fa fa-car"></span>
+                GET DIRECTIONS
+            </button>
+            <button class="btn btn-default ng-hide" type="button" data-target="#publicTransportationModal" data-toggle="modal" data-ng-show="calendarDetails.isPublicTransportAvailable &amp;&amp; !calendarDetails.suppressAddress">
+                <span class="fa fa-bus"></span>
+                PUBLIC TRANSIT
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="bline visible-xs visible-sm ng-scope"></div>
+
+<div style="text-align:center" ng-hide="!ProviderDetailsHeader" class="ng-scope">
+    <h3 class="ProviderDetailsHeader ng-binding">Please Note: Patients under 18 need a legal guardian present at the time of the appointment</h3>
+</div>
+
+<div class="row ng-scope">
+	<div class="col-xs-4">
+		<h3>Schedule Appointment</h3>
+	</div>
+	<div class="col-xs-8 text-right" style="margin-top:10px; padding-right:30px;">
+		<button class="btn btn-default ng-hide" data-ng-click="searchAppointments()" data-ng-show="showAdditionalProvidersBtn">
+			BOOK WITH ADDITIONAL PROVIDERS
+		</button>
+	</div>
+</div>
+<div class="row provider-appt-bg ng-scope">
+    <div class="col-md-8 col-xs-12 provider-appt">
+        <div class="col-md-3 col-xs-12 hidden-xs hidden-sm">
+            <h5>Select Date</h5>
+        </div>
+        <div class="col-md-9 col-sm-12 col-xs-12 ng-hide" style="padding-right:0; padding-top:3px; text-align:right;" data-ng-hide="useDecisionSupport &amp;&amp; decisionSupportProvidedAppointmentType">
+            <span class="provider-patient-appt" style="float:none;">I am a ...</span>
+            
+        </div>
+        <div class="visible-xs visible-sm">
+            <h5 id="selectDate">Select Date</h5>
+        </div>
+    </div>
+
+    <div class="col-md-8 col-xs-12">
+        <div class="provider-calendar">
+            <div ng-switch="datepickerMode" role="application" ng-keydown="keydown($event)" ng-model="selectedDate" min-date="baseDateString" max-date="endDateOverrideString" show-weeks="false" class="well well-sm ng-isolate-scope ng-pristine ng-valid ng-valid-date-disabled ng-valid-date" format-day="d" max-mode="day" control="focusinControl" ng-change="selectDate(selectedDate)" date-disabled="disabled(date, mode)" month-changed="monthChanged(month, year)" id="datePickerProvider">
+  <table role="grid" aria-labelledby="datepicker-006-9812-title" aria-activedescendant="datepicker-006-9812-19" ng-switch-when="day" tabindex="0">
+  <thead>
+    <tr>
+      <th><button type="button" class="btn btn-default btn-sm pull-left" ng-click="move(-1)" tabindex="-1" style="display: none;"><i class="glyphicon glyphicon-chevron-left"></i></button></th>
+      <th colspan="5"><button id="datepicker-006-9812-title" role="heading" aria-live="assertive" aria-atomic="true" type="button" class="btn btn-default btn-sm" ng-click="toggleMode()" tabindex="-1" style="width:100%;"><strong class="ng-binding">April 2021</strong></button></th>
+      <th><button type="button" class="btn btn-default btn-sm pull-right" ng-click="move(1)" tabindex="-1" style="display: block;"><i class="glyphicon glyphicon-chevron-right"></i></button></th>
+    </tr>
+    <tr>
+      <th ng-show="showWeeks" class="text-center ng-hide"></th>
+      <th ng-repeat="label in labels track by $index" class="text-center ng-scope"><small aria-label="Sunday" class="ng-binding">Sun</small></th><th ng-repeat="label in labels track by $index" class="text-center ng-scope"><small aria-label="Monday" class="ng-binding">Mon</small></th><th ng-repeat="label in labels track by $index" class="text-center ng-scope"><small aria-label="Tuesday" class="ng-binding">Tue</small></th><th ng-repeat="label in labels track by $index" class="text-center ng-scope"><small aria-label="Wednesday" class="ng-binding">Wed</small></th><th ng-repeat="label in labels track by $index" class="text-center ng-scope"><small aria-label="Thursday" class="ng-binding">Thu</small></th><th ng-repeat="label in labels track by $index" class="text-center ng-scope"><small aria-label="Friday" class="ng-binding">Fri</small></th><th ng-repeat="label in labels track by $index" class="text-center ng-scope"><small aria-label="Saturday" class="ng-binding">Sat</small></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="row in rows track by $index" class="ng-scope">
+      <td ng-show="showWeeks" class="text-center h6 ng-hide"><em class="ng-binding"></em></td>
+      <td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-0" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">28</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-1" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">29</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-2" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">30</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-3" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">31</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-4" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">1</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-5" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">2</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-6" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">3</span></button>
+      </td>
+    </tr><tr ng-repeat="row in rows track by $index" class="ng-scope">
+      <td ng-show="showWeeks" class="text-center h6 ng-hide"><em class="ng-binding"></em></td>
+      <td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-7" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">4</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-8" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">5</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-9" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">6</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-10" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">7</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-11" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">8</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-12" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">9</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-13" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">10</span></button>
+      </td>
+    </tr><tr ng-repeat="row in rows track by $index" class="ng-scope">
+      <td ng-show="showWeeks" class="text-center h6 ng-hide"><em class="ng-binding"></em></td>
+      <td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-14" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">11</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-15" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">12</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-16" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">13</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-17" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">14</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-18" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">15</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-19" aria-disabled="false">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm active btn-info" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-info">16</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-20" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">17</span></button>
+      </td>
+    </tr><tr ng-repeat="row in rows track by $index" class="ng-scope">
+      <td ng-show="showWeeks" class="text-center h6 ng-hide"><em class="ng-binding"></em></td>
+      <td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-21" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">18</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-22" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">19</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-23" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">20</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-24" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">21</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-25" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">22</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-26" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">23</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-27" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">24</span></button>
+      </td>
+    </tr><tr ng-repeat="row in rows track by $index" class="ng-scope">
+      <td ng-show="showWeeks" class="text-center h6 ng-hide"><em class="ng-binding"></em></td>
+      <td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-28" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">25</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-29" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">26</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-30" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">27</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-31" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">28</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-32" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">29</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-33" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding">30</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-34" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">1</span></button>
+      </td>
+    </tr><tr ng-repeat="row in rows track by $index" class="ng-scope">
+      <td ng-show="showWeeks" class="text-center h6 ng-hide"><em class="ng-binding"></em></td>
+      <td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-35" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">2</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-36" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">3</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-37" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">4</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-38" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">5</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-39" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">6</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-40" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">7</span></button>
+      </td><td ng-repeat="dt in row track by dt.date" class="text-center ng-scope" role="gridcell" id="datepicker-006-9812-41" aria-disabled="true">
+        <button type="button" style="width:100%;" class="btn btn-default btn-sm" ng-class="{'btn-info': dt.selected, active: isActive(dt)}" ng-click="select(dt.date)" ng-disabled="dt.disabled" tabindex="-1" disabled="disabled"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}" class="ng-binding text-muted">8</span></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+  
+  
+</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 col-xs-12 text-center">
+            <div class="hidden-xs hidden-sm margin-top">
+                <h5>Available Times</h5>
+                <div class="provider-avl-times ng-binding">April 16, 2021</div>
+            </div>
+            <div class="visible-xs visible-sm">
+                <div class="provider-avtimes-resp ng-binding">April 16, 2021</div>
+            </div>
+            <div class="col-md-4 col-xs-12 appt-scroll">
+                <div data-ng-show="appointments.length <= 0" class="ng-hide">
+                    This provider currently has no available appointments this month. Please select a different month.
+                </div>
+                <div class="col-xs-4 col-md-12 ng-scope" data-ng-repeat="appointment in appointmentsForDay">
+                    <a href="" id="slot722014728" class="btn btn-default ng-scope ng-binding" style="margin-bottom:15px;" tooltip-html-unsafe="COVID Dose 1" tooltip-placement="left" data-ng-click="selectAppointment(appointment)">
+                        07:40 AM
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row ng-scope">
+    <div class="visible-xs visible-sm">
+        <div class="col-xs-12 text-center">
+            <div style="margin:0 20px;">
+                <div class="visible-xs visible-sm">
+                    <h3>Location:</h3>
+                </div>
+                <div class="provider-address">
+                    <div><span class="ng-binding">1001 Pawtucket Blvd East </span></div>
+                    <div><span class="ng-binding">Lowell, Massachusetts 01854</span></div>
+                </div>
+                <div ng-show="calendarDetails.milesAway > 0.0" class="ng-hide">
+                    <span class="fa fa-map-marker "></span><span class="filter-provider-mile  ng-binding">0.00 mi</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 provider-tpad">
+            <button type="submit" class="btn btn-default ng-hide" data-target="#otherLocationsModal" data-toggle="modal" data-ng-show="otherLocations.length > 0" style="margin-bottom:10px;">
+                <span class="fa fa-hospital-o"></span>
+                OTHER LOCATIONS
+            </button>
+
+            <button class="btn btn-default" data-ng-click="getDirections()" style="margin-bottom:10px;">
+                <span class="fa fa-car"></span>
+                GET DIRECTIONS
+            </button>
+
+            <button class="btn btn-default ng-hide" data-target="#publicTransportationModal" data-toggle="modal" data-ng-show="calendarDetails.isPublicTransportAvailable" style="margin-bottom:10px;">
+                <span class="fa fa-bus"></span>
+                PUBLIC TRANSIT
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="bline visible-xs visible-sm ng-scope"></div>
+
+<div class="row ng-scope">
+    <div class="col-md-12 col-xs-12 provider-bpad">
+        <h5>Additional Information</h5>
+        <div data-ng-hide="HideSpokenLanguage" class="">
+            <div class="provider-footer-header">Languages Spoken</div>
+            <div class="provider-footer-links"><span class="ng-binding"></span></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ng-scope" id="apptslot" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" data-ng-click="ClosePopUp()"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Confirm Appointment Type</h4>
+            </div>
+            <div class="modal-body">
+                <div class="btn-group ng-binding" id="mode-group" data-toggle="buttons">
+                    Have you seen Lowell General  Vaccine  before?
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal" data-ng-click="processConfirmAppointmentType(true)">Yes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal" data-ng-click="processConfirmAppointmentType(false)">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="otherLocationsModal" class="modal fade ng-scope" aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Other Locations</h4>
+            </div>
+            <div class="modal-body">
+                <div class="panel-right-provider">
+                    <div class="provider-name">
+                        <h5 class="ng-binding">Lowell General  Vaccine </h5>
+                    </div>
+                    <div class="provider-specialty ng-binding">Infectious Diseases</div>
+                    <div>&nbsp;</div>
+                    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-12 provider-container">
+                        <div class="row">
+							
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade ng-scope" id="publicTransportationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Public Transportation</h4>
+            </div>
+            <div class="modal-body">
+                <div data-ng-show="calendarDetails.busRoutes != null || calendarDetails.busRoutes != ''" class="">
+                    <h5>Bus Routes</h5>
+                    <div id="busRoutes"></div>
+                </div>
+                <div data-ng-show="calendarDetails.railRoutes != null || calendarDetails.railRoutes != ''" class="">
+                    <h5>Rail Routes</h5>
+                    <div id="railRoutes"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="slotNotAvailableDiv" class="modal fade ng-scope" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    
+</div>
+</div>
+	</div>
+</div>
+
+<input type="hidden" id="calendarId" value="32122">
+<input type="hidden" id="recommendedProvidersString" value="">
+<input data-val="true" data-val-required="The Boolean field is required." id="showAdditionalProvidersBtn" name="showAdditionalProvidersBtn" type="hidden" value="False">
+<input data-val="true" data-val-required="The Boolean field is required." id="autoAdvance" name="autoAdvance" type="hidden" value="True">
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container hidden-print">
+			<div class="mhd-logo-container">
+
+				<a href="http://myhealthdirect.com" target="_blank">
+					<img alt="Powered by MyHealthDirect, Your Bridge to Better" src="https://mhdprod.blob.core.windows.net/applicationimages/mhd-logo.png" aria-label="MyHealthDirect Logo">
+				</a>
+				<div>
+					<span class="mhd-version" style="height:inherit; line-height:inherit;">Version 2021.4.15.17606</span>
+				</div>
+			</div>
+			<span class="mhd-copyright">
+				Copyright © 2021 MyHealthDirect. All Rights Reserved.
+				| <a href="/Home/SMSTextingPrivacyPolicy?Length=4" style="color: white">SMS Texting Privacy Policy</a>
+				|  <a href="/Home/SMSTextingTermsOfService?Length=4" style="color: white">SMS Texting Terms of Service</a>
+			</span>
+
+		</div>
+	</footer>
+
+	<div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="indexErrorModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+					<h3>There seems to be a problem</h3>
+				</div>
+
+				<div class="modal-body">
+					<p id="response-message"></p>
+					<div class="general-error">
+
+					</div>
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="extendModal" tabindex="-1" role="dialog" aria-labelledby="extendModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">×</span>
+					</button>
+					<h5 class="modal-title" id="extendModalLabel">Extend Session?</h5>
+				</div>
+				<div class="modal-body" id="extendModalBody">
+					Your session will expire in <b><label id="modalTimer"></label></b>.  Click 'ok' to extend the session.
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="extendButton">Ok</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<input type="hidden" id="UseDecisionSupport" value="True">
+	<input type="hidden" id="ProviderDetailsHeader" value="Please Note: Patients under 18 need a legal guardian present at the time of the appointment">
+	<input type="hidden" id="APServerUrl" value="">
+	<input type="hidden" id="NoAvailabilityMessage" value="">
+	<input type="hidden" id="WarnBeforeSessionExpirationTime" value="5">
+	<input type="hidden" id="FormsAuthTimeout" value="20">
+	<input type="hidden" id="SessionEndRedirectURL" value="/Home/SessionExpired">
+	<input type="hidden" id="SessionExtendURL" value="/Home/ExtendSession">
+
+
+	<input type="hidden" id="EnableOffice365">
+	<input type="hidden" id="SuppressDateFieldOnSearch">
+	<input type="hidden" id="SuppressReasonForVisit" value="value">
+	<input type="hidden" id="ShowSiteNameOnSearchResults">
+
+
+
+	
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+	
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+		
+
+	
+
+
+</body></html>
