@@ -47,7 +47,7 @@ async function ScrapeWebsiteData(site, fetchService) {
     let startDate = null;
     let nextPrev = null;
 
-    // Advance the calendar of each site until no availability is found.
+    // Advance the calendar until no availability is found.
     do {
         const calendarHtml = await fetchService.fetchAvailability(
             site,
@@ -112,8 +112,7 @@ async function fetchAvailability(site, startDate, nextPrev) {
  */
 function bodyParamString(calendar, type, startDate, nextPrev) {
     /* Example with options[nextprev] and month=
-    'type=19593247&calendar=5148162&month=2021-05-02&skip=true&options%5Bnextprev%5D%5B2021-05-05%5D=2021-04-29&options%5Bnextprev%5D%5B2021-06-05%5D=2021-05-05&options%5Bnextprev%5D%5B2021-05-02%5D=2021-04-29&options%5BnumDays%5D=3&ignoreAppointment=&appointmentType=&calendarID=
-'
+    'type=19593247&calendar=5148162&month=2021-05-02&skip=true&options%5Bnextprev%5D%5B2021-05-05%5D=2021-04-29&options%5Bnextprev%5D%5B2021-06-05%5D=2021-05-05&options%5Bnextprev%5D%5B2021-05-02%5D=2021-04-29&options%5BnumDays%5D=3&ignoreAppointment=&appointmentType=&calendarID='
     */
     const paramsList = [
         `type=${type}`,
@@ -138,10 +137,6 @@ function bodyParamString(calendar, type, startDate, nextPrev) {
  * @returns
  */
 function getDailyAvailabilityCountsInCalendar(root) {
-    function reformatDate(dateStr) {
-        return moment(`${dateStr}T00:00:00`).format("M/D/YYYY");
-    }
-
     if (hasNoAvailabilityMessage(root)) {
         return new Map();
     }
