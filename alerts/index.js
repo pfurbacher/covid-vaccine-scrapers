@@ -21,6 +21,7 @@ appointmentAlertBatchZips: {
     count,
 }
 */
+
 const { sendSlackMsg } = require("../lib/slack");
 const { sendTweet } = require("../lib/twitter");
 const dbUtils = require("../lib/db/utils");
@@ -30,6 +31,10 @@ const faunadb = require("faunadb"),
 const moment = require("moment");
 const scraperUtils = require("../lib/db/scraper_data");
 
+const AWS = require("aws-sdk");
+const { Lambda } = require("faunadb");
+const lambda = new AWS.Lambda();
+
 dotenv.config();
 
 const alerts = {
@@ -38,7 +43,7 @@ const alerts = {
     // How many appointments we must find to consider alerting at all
     SMALL_APPOINTMENT_NUMBER_THRESHOLD: () => 3,
     // How many minutes must pass between new alerts for the same location
-    REPEAT_ALERT_TIME: () => 30,
+    REPEAT_ALERT_TIME: () => 20,
     // exported functions:
     activeAlertExists,
     aggregateAvailability,
@@ -211,9 +216,9 @@ async function runAlerts(
 
     let message;
     if (bookableAppointmentsFound) {
-        message = `${bookableAppointmentsFound} appointments available at ${location.name} in ${location.address.city}. Visit https://macovidvaccines.com to book.`;
+        message = `${bookableAppointmentsFound} appointments available at ${location.name} in ${location.address.city}. Visit https://macovidvaccines.com for more information and to book.`;
     } else if (availabilityWithNoNumbers) {
-        message = `Appointments available at ${location.name} in ${location.address.city}. Visit https://macovidvaccines.com to book.`;
+        message = `Appointments available at ${location.name} in ${location.address.city}. Visit https://macovidvaccines.com for more information and to book.`;
     } else {
         console.error(
             `runAlerts was called for location ref ${locationRefId} but no appointments were passed in`
@@ -221,21 +226,77 @@ async function runAlerts(
     }
 
     const promises = [];
-    if (message && !parentIsChain) {
-        if (sendMassAlert) {
+    if (message) {
+        if (sendMassAlert && !parentIsChain) {
             promises.push(sendTweet(message));
         }
         if (sendRegularAlert) {
+            // always send slack - this is just for monitoring/debugging temporarily
+            // if (!parentIsChain) {
             promises.push(sendSlackMsg("bot", message));
+            // }
+            // always send texts/emails on a per-location basis.
+            promises.push(
+                sendTextsAndEmails(
+                    [
+                        {
+                            latitude: location.latitude,
+                            longitude: location.longitude,
+                        },
+                    ],
+                    bookableAppointmentsFound || 1,
+                    message
+                )
+            );
         }
     }
     // log any errors without failing.
     return Promise.all(promises).catch(console.error);
 }
 
+async function sendTextsAndEmails(locs, numberAppointments, message) {
+    if (process.env.NODE_ENV === "production") {
+        return new Promise((resolve, reject) =>
+            lambda.invoke(
+                {
+                    FunctionName: process.env.PINPOINTFUNCTIONNAME,
+                    InvocationType: "Event",
+                    Payload: JSON.stringify({
+                        locations: locs,
+                        numberAppointmentsFound: numberAppointments,
+                        message,
+                    }),
+                },
+                (err, data) => {
+                    if (err) {
+                        console.error(`Pinpoint error: ${err}`);
+                        reject(err);
+                    } else {
+                        console.log(
+                            `Pinpoint request successful. response: ${JSON.stringify(
+                                data
+                            )}`
+                        );
+                        resolve(data);
+                    }
+                }
+            )
+        );
+    } else {
+        console.log(
+            `would send text alerts with arguments: ${JSON.stringify({
+                locations: locs,
+                numberAppointmentsFound: numberAppointments,
+                message,
+            })}`
+        );
+    }
+}
+
 async function publishGroupAlert(
     locationName,
     locationCities,
+    locationLatLongs,
     bookableAppointmentsFound,
     availabilityWithNoNumbers,
     sendMassAlert,
@@ -283,6 +344,15 @@ async function publishGroupAlert(
     }
     if (sendRegularAlert) {
         promises.push(sendSlackMsg("bot", message));
+        // don't send out texts/emails for bundled-up locations. We always send these out individually.
+        // leaving this commented out for posterity/JIC.
+        /* promises.push(
+            sendTextsAndEmails(
+                locationLatLongs,
+                Math.max(bookableAppointmentsFound || 0, locationCities.length)
+            ),
+            message
+        ); */
     }
     return Promise.all(promises).catch(console.err);
 }
@@ -298,6 +368,7 @@ async function handleGroupAlerts({
         let bookableAppointmentsFound = 0;
         let availabilityWithNoNumbers = false;
         let locationCities = [];
+        let locationLatLongs = [];
         for (const location of locations) {
             let locationBookableAppointmentsFound = 0;
             let locationAvailabilityWithNoNumbers = false;
@@ -318,6 +389,10 @@ async function handleGroupAlerts({
                     )
                 ) {
                     locationCities.push(location.location.data?.address?.city);
+                    locationLatLongs.push({
+                        latitude: location.location.data?.latitude,
+                        longitude: location.location.data?.longitude,
+                    });
                 }
             }
             bookableAppointmentsFound += locationBookableAppointmentsFound;
@@ -361,6 +436,7 @@ async function handleGroupAlerts({
                 await alerts.publishGroupAlert(
                     parentLocation.data.name,
                     locationCities,
+                    locationLatLongs,
                     bookableAppointmentsFound,
                     availabilityWithNoNumbers,
                     // this counts as a "mass alert" if we have more than APPOINTMENT_NUMBER_THRESHOLD
@@ -576,10 +652,12 @@ async function handleIndividualAlert({
             console.log(`(1) Not doing anything for ${locationRefId}.`);
         }
     } else if (
-        (bookableAppointmentsFound && bookableAppointmentsFound > 0) ||
+        (bookableAppointmentsFound &&
+            bookableAppointmentsFound >
+                alerts.SMALL_APPOINTMENT_NUMBER_THRESHOLD()) ||
         availabilityWithNoNumbers
     ) {
-        console.log(`appointments found for ${locationRefId}.`);
+        console.log(`enough appointments found for ${locationRefId}.`);
         const alertStartTime = await alerts.getLastAlertStartTime(
             locationRefId
         );
@@ -610,7 +688,8 @@ async function handleIndividualAlert({
                 bookableAppointmentsFound >=
                     alerts.APPOINTMENT_NUMBER_THRESHOLD(),
                 bookableAppointmentsFound >=
-                    alerts.SMALL_APPOINTMENT_NUMBER_THRESHOLD()
+                    alerts.SMALL_APPOINTMENT_NUMBER_THRESHOLD() ||
+                    availabilityWithNoNumbers
             );
         }
     } else {
