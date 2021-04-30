@@ -1,7 +1,7 @@
 const { site } = require("../no-browser-site-scrapers/LowellGeneral/config");
 const utils = require("../no-browser-site-scrapers/LowellGeneral/utils");
 const moment = require("moment");
-const { expect } = require("chai");
+const { expect, util } = require("chai");
 
 describe("LowellGeneral :: test getting slots from JSON response", function () {
     it("should have slots aplenty", function () {
@@ -16,11 +16,20 @@ describe("LowellGeneral :: test getting slots from JSON response", function () {
         slotsMap.forEach((value, key) => (total += value));
 
         expect(total).equals(expectedTotal);
+
+        const expectedDates = [16, 19, 20];
+        const actualDates = [];
+        slotsMap.forEach((value, key) => {
+            const date = key.match(/\d{1,2}\/(\d{1,2})\/\d{2}/)[1];
+            actualDates.push(parseInt(date));
+        });
+        console.log(actualDates);
+        expect(actualDates).deep.equals(expectedDates);
     });
 });
 
-describe("LowellGeneral :: test the month generator", function () {
-    it("should give a succession of months starting with the current one", function () {
+describe("LowellGeneral :: test the month generation", function () {
+    it.skip("should give a succession of months starting with the current one", function () {
         const momentNow = moment();
         const monthGen = utils.monthGenerator(momentNow);
         const months = [1, 2, 3].map((n) => monthGen.next().value.month() + 1);
@@ -28,6 +37,13 @@ describe("LowellGeneral :: test the month generator", function () {
         const thisMonth = momentNow.month(); // months are zero based; text months are 1-based
         const expectedMonths = [thisMonth + 1, thisMonth + 2, thisMonth + 3];
         expect(months).deep.equals(expectedMonths);
+    });
+    it("the getFetchMonths() should return 3 months", () => {
+        const monthsAsMoments = utils.getFetchMonths(3);
+        monthsAsMoments.forEach((month) =>
+            console.log(`${month.month() + 1}/${month.year()}`)
+        );
+        expect(monthsAsMoments.length).equals(3);
     });
 });
 

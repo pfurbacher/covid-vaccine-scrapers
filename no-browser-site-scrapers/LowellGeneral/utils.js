@@ -31,14 +31,15 @@ const monthGen = monthGenerator(); // "Generator { }"
  * @returns an array of moment.js objects for the given number of months
  */
 function getFetchMonths(numberOfMonths) {
-    const aMoment = moment();
-    aMoment.date(15);
-    aMoment.subtract(1, "months");
-    const momentsToFetch = [...Array(numberOfMonths)].map((number) =>
-        aMoment.add(1, "month").clone()
-    );
+    const aMoment = moment().date(15);
+    const months = [aMoment.clone()];
+    let count = 1;
+    do {
+        months.push(aMoment.clone().add(count, "month"));
+        count += 1;
+    } while (count < numberOfMonths);
 
-    return momentsToFetch;
+    return months;
 }
 
 //fetch("https://lowellgeneralvaccine.myhealthdirect.com/DataAccess/Appointment/CalendarAppointments/32122?Month=5&Year=2021&AppointmentTypeId=0", {

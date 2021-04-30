@@ -40,21 +40,17 @@ function liveFetchService() {
 }
 
 async function ScrapeWebsiteData(site, fetchService) {
-    const moments = utils.getFetchMonths(3);
-
-    let hasAvailability = false;
-    // Advance the calendar of each site until no availability is found.
-    const availabilityContainer = await Promise.all([await getData(moments)]);
+    const availabilityContainer = await getData();
 
     const results = {
         ...site,
         ...availabilityContainer,
-        hasAvailability: hasAvailability,
+        hasAvailability: Object.keys(availabilityContainer).length > 0,
     };
     return results;
 }
 
-async function getData(moments) {
+async function getData() {
     const availabilityContainer = {
         availability: {},
         hasAvailability: false,
@@ -62,8 +58,10 @@ async function getData(moments) {
     // const fakeData = require("../../test/LowellGeneral/responseWithSlots.json");
     // const data = null;
     /* */
-    moments.map(async (aMoment) => {
-        const calendarPageJson = await fetchCalendarPage(aMoment);
+    const fetchMonths = utils.getFetchMonths(3);
+
+    fetchMonths.map(async (aMonth) => {
+        const calendarPageJson = await fetchCalendarPage(aMonth);
 
         const monthAvailabilityMap = utils.getSlotsForMonth(calendarPageJson);
 
@@ -74,12 +72,8 @@ async function getData(moments) {
                 hasAvailability: !!value,
             };
         });
-
-        hasAvailability =
-            hasAvailability ||
-            Object.keys(availabilityContainer.availability).length > 0;
     });
-    /* */
+
     return availabilityContainer;
 }
 
