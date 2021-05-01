@@ -1,5 +1,5 @@
-const { site } = require("../no-browser-site-scrapers/LowellGeneral/config");
-const utils = require("../no-browser-site-scrapers/LowellGeneral/utils");
+const { site } = require("../site-scrapers/LowellGeneral/config");
+const utils = require("../site-scrapers/LowellGeneral/utils");
 const moment = require("moment");
 const { expect, util } = require("chai");
 
@@ -17,13 +17,36 @@ describe("LowellGeneral :: test getting slots from JSON response", function () {
 
         expect(total).equals(expectedTotal);
 
-        const expectedDates = [16, 19, 20];
+        const expectedDates = [...new Set(json.availableDays)];
         const actualDates = [];
         slotsMap.forEach((value, key) => {
             const date = key.match(/\d{1,2}\/(\d{1,2})\/\d{2}/)[1];
             actualDates.push(parseInt(date));
         });
-        console.log(actualDates);
+        console.log(`${actualDates}\n${expectedDates}`);
+        expect(actualDates).deep.equals(expectedDates);
+    });
+
+    it("should have slots aplenty", function () {
+        const json = loadTestJsonDataFromFile(
+            "LowellGeneral",
+            "416-slots.json"
+        );
+        const slotsMap = utils.getSlotsForMonth(json);
+
+        const expectedTotal = 416;
+        let total = 0;
+        slotsMap.forEach((value, key) => (total += value));
+
+        expect(total).equals(expectedTotal);
+
+        const expectedDates = [...new Set(json.availableDays)];
+        const actualDates = [];
+        slotsMap.forEach((value, key) => {
+            const date = key.split("/")[1];
+            actualDates.push(parseInt(date));
+        });
+        console.log(`${actualDates}\n${expectedDates}`);
         expect(actualDates).deep.equals(expectedDates);
     });
 });
