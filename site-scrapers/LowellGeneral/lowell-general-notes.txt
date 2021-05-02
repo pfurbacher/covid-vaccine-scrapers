@@ -56,38 +56,8 @@ Pfizer Dose 2:
     data-ng-click="selectAppointment(appointment)">07:40 AM
 </a>
 
-Just a regular button, of which there are 45
-<button id="datepicker-006-2670-title"
-    role="heading"
-    aria-live="assertive"
-    aria-atomic="true"
-    type="button"
-    class="btn btn-default btn-sm"
-    ng-click="toggleMode()"
-    tabindex="-1"
-    style="width:100%;"><strong class="ng-binding">April 2021</strong>
-</button>
 
-Active button:
-<button type="button" style="width:100%;"
-    class="btn btn-default btn-sm active btn-info"
-    ng-class="{'btn-info': dt.selected, active: isActive(dt)}"
-    ng-click="select(dt.date)"
-    ng-disabled="dt.disabled"
-    tabindex="-1">
-        <span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}"
-            class="ng-binding text-info">16
-        </span>
-</button>
 
-Clickable date:
-<button type="button" style="width:100%;"
-    class="btn btn-default btn-sm"
-    ng-class="{'btn-info': dt.selected, active: isActive(dt)}"
-    ng-click="select(dt.date)"
-    ng-disabled="dt.disabled"
-    tabindex="-1"><span ng-class="{'text-muted': dt.secondary, 'text-info': dt.current}"
-    class="ng-binding">20</span></button>
 
 fetch("https://lowellgeneralvaccine.myhealthdirect.com/DataAccess/PageData/ProviderInfo/32122?Month=4&Year=2021&AppointmentTypeId=0&appointmentStartDateString=&autoAdvance=true&days=30", {
   "headers": {
@@ -109,6 +79,44 @@ fetch("https://lowellgeneralvaccine.myhealthdirect.com/DataAccess/PageData/Provi
   "method": "GET",
   "mode": "cors"
 });
+
+
+Dose 1:
+    "appointmentTypeName": "COVID Dose 1",
+    "appointmentTypeId": 1580,
+
+Dose 2: moderna -- 403 slots over 6 days
+"acknowledgeType": 1,
+    "addressText": "01854",
+    "calendarDetails": {
+        "idServiceSite": 32122,
+        "idService": 91879,
+        "idSite": 18136,
+        "idSystem": 2569,
+        ...
+    "decisionSupportProvidedAppointmentType": true,
+    "appointmentTypeId": "1581",
+    "newPatientAppointmentTypeId": "5",
+    "currentPatientAppointmentTypeId": "93",
+    "newOrCurrentPatientAppointmentTypeId": "100",
+    "azureMapsKey": "0HOkXkkb67gbM9uQX88w6WOyKXlUudd-4y93h38_7Cs",
+
+Dose2: Pfizer
+"acknowledgeType": 1,
+    "addressText": "01854",
+    "calendarDetails": {
+        "idServiceSite": 32122,
+        "idService": 91879,
+        "idSite": 18136,
+        "idSystem": 2569,
+        ...
+    "decisionSupportProvidedAppointmentType": true,
+    "appointmentTypeId": "1581",
+    "newPatientAppointmentTypeId": "5",
+    "currentPatientAppointmentTypeId": "93",
+    "newOrCurrentPatientAppointmentTypeId": "100",
+    "azureMapsKey": "0HOkXkkb67gbM9uQX88w6WOyKXlUudd-4y93h38_7Cs",
+
 
 {
     "acknowledgeType": 1,
