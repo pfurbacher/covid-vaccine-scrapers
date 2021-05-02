@@ -1,10 +1,7 @@
 const { site } = require("./config");
-const utils = require("./utils");
 
 const fetch = require("node-fetch");
-const htmlParser = require("node-html-parser");
 const moment = require("moment");
-const { dropWhile } = require("lodash");
 
 let service = null;
 module.exports = async function GetAvailableAppointments(
@@ -111,12 +108,12 @@ async function getData(page) {
     // const fakeData = require("../../test/LowellGeneral/responseWithSlots.json");
     // const data = null;
     /* */
-    const fetchMonths = utils.getFetchMonths(3);
+    const fetchMonths = getFetchMonths(3);
 
     for (const month of fetchMonths) {
         const calendarPageJson = await fetchCalendarJson(page, month);
 
-        const monthAvailabilityMap = utils.getSlotsForMonth(calendarPageJson);
+        const monthAvailabilityMap = getSlotsForMonth(calendarPageJson);
 
         // Add all day objects to results.availability
         monthAvailabilityMap.forEach((value, key) => {
@@ -131,8 +128,9 @@ async function getData(page) {
 }
 
 async function fetchCalendarJson(page, aMoment) {
-    const response = await page.evaluate(() => {
-        fetch(utils.getCalendarFetchUrl(aMoment))
+    const url = getCalendarFetchUrl(aMoment);
+    const response = await page.evaluate((url) => {
+        return fetch(url)
             .then((res) => res.json())
             .then((json) => {
                 return json;
@@ -142,7 +140,45 @@ async function fetchCalendarJson(page, aMoment) {
                     `${site.public.name} :: error fetching sign up links on front page: ${error}`
                 )
             );
-    });
+    }, url);
 
     return response;
+}
+
+/**
+ * Generates an array of successive moment.js objects, starting with the current month
+ * @param {Int} numberOfMonths
+ * @returns an array of moment.js objects for the given number of months
+ */
+function getFetchMonths(numberOfMonths) {
+    const aMoment = moment().date(15);
+    const months = [aMoment.clone()];
+    let count = 1;
+    do {
+        months.push(aMoment.clone().add(count, "month"));
+        count += 1;
+    } while (count < numberOfMonths);
+
+    return months;
+}
+
+function getCalendarFetchUrl(aMoment) {
+    const url = [
+        "https://lowellgeneralvaccine.myhealthdirect.com/",
+        "DataAccess/Appointment/CalendarAppointments/32122?",
+        `Month=${aMoment.month() + 1}`,
+        `&Year=${aMoment.year()}`,
+        "&AppointmentTypeId=0",
+    ].join("");
+    return url;
+}
+
+function getSlotsForMonth(monthJson) {
+    const appointments = monthJson.appointments;
+    const slotForMonthMap = Object.values(appointments).reduce((acc, appt) => {
+        const date = moment(appt.slotDateTime).format("M/D/YYYY");
+        acc.set(date, (acc.get(date) || 0) + 1);
+        return acc;
+    }, new Map());
+    return slotForMonthMap;
 }
