@@ -1,18 +1,13 @@
 const { site } = require("./config");
+const utils = require("./utils");
 
 const fetch = require("node-fetch");
 const moment = require("moment");
 
-let service = null;
-module.exports = async function GetAvailableAppointments(
-    browser,
-    fetchService = liveFetchService()
-) {
+module.exports = async function GetAvailableAppointments(browser) {
     console.log(`${site.public.name} starting.`);
 
-    service = fetchService;
-
-    const websiteData = await ScrapeWebsiteData(browser, site, fetchService);
+    const websiteData = await ScrapeWebsiteData(browser, site);
 
     const results = {
         parentLocationName: `${site.public.name}`,
@@ -25,21 +20,10 @@ module.exports = async function GetAvailableAppointments(
     return results;
 };
 
-/**
- * Dependency injection: in live scraping, the fetchAvailability() in this module is used.
- * In testing, a mock fetchAvailability() is injected.
- */
-function liveFetchService() {
-    return {
-        async fetchCalendarJson(aMoment) {
-            return await fetchCalendarJson(aMoment);
-        },
-    };
-}
-
-async function ScrapeWebsiteData(browser, site, fetchService) {
+async function ScrapeWebsiteData(browser, site) {
     const page = await browser.newPage();
-    const questionnaireResults = await answerQuestions(page, site);
+
+    await answerQuestions(page, site);
 
     const availabilityContainer = await getData(page);
 
@@ -91,7 +75,7 @@ async function answerQuestions(page, site) {
     await page.evaluate(() => {
         document.querySelectorAll("input[type=radio]")[1].checked = true;
     });
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(1200);
 
     await page.evaluate(() => {
         document.querySelector("#next-btn").click();
@@ -108,12 +92,12 @@ async function getData(page) {
     // const fakeData = require("../../test/LowellGeneral/responseWithSlots.json");
     // const data = null;
     /* */
-    const fetchMonths = getFetchMonths(3);
+    const fetchMonths = utils.getFetchMonths(3);
 
     for (const month of fetchMonths) {
         const calendarPageJson = await fetchCalendarJson(page, month);
 
-        const monthAvailabilityMap = getSlotsForMonth(calendarPageJson);
+        const monthAvailabilityMap = utils.getSlotsForMonth(calendarPageJson);
 
         // Add all day objects to results.availability
         monthAvailabilityMap.forEach((value, key) => {
@@ -128,7 +112,7 @@ async function getData(page) {
 }
 
 async function fetchCalendarJson(page, aMoment) {
-    const url = getCalendarFetchUrl(aMoment);
+    const url = utils.getCalendarFetchUrl(aMoment);
     const response = await page.evaluate((url) => {
         return fetch(url)
             .then((res) => res.json())
@@ -143,42 +127,4 @@ async function fetchCalendarJson(page, aMoment) {
     }, url);
 
     return response;
-}
-
-/**
- * Generates an array of successive moment.js objects, starting with the current month
- * @param {Int} numberOfMonths
- * @returns an array of moment.js objects for the given number of months
- */
-function getFetchMonths(numberOfMonths) {
-    const aMoment = moment().date(15);
-    const months = [aMoment.clone()];
-    let count = 1;
-    do {
-        months.push(aMoment.clone().add(count, "month"));
-        count += 1;
-    } while (count < numberOfMonths);
-
-    return months;
-}
-
-function getCalendarFetchUrl(aMoment) {
-    const url = [
-        "https://lowellgeneralvaccine.myhealthdirect.com/",
-        "DataAccess/Appointment/CalendarAppointments/32122?",
-        `Month=${aMoment.month() + 1}`,
-        `&Year=${aMoment.year()}`,
-        "&AppointmentTypeId=0",
-    ].join("");
-    return url;
-}
-
-function getSlotsForMonth(monthJson) {
-    const appointments = monthJson.appointments;
-    const slotForMonthMap = Object.values(appointments).reduce((acc, appt) => {
-        const date = moment(appt.slotDateTime).format("M/D/YYYY");
-        acc.set(date, (acc.get(date) || 0) + 1);
-        return acc;
-    }, new Map());
-    return slotForMonthMap;
 }
