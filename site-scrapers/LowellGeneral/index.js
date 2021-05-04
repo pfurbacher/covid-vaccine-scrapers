@@ -2,6 +2,7 @@ const { site } = require("./config");
 const utils = require("./utils");
 
 const moment = require("moment");
+const { savePageContent } = require("../../lib/s3");
 
 module.exports = async function GetAvailableAppointments(browser) {
     console.log(`${site.public.name} starting.`);
@@ -22,15 +23,20 @@ module.exports = async function GetAvailableAppointments(browser) {
 async function ScrapeWebsiteData(browser, site) {
     const page = await browser.newPage();
 
-    await answerQuestions(page, site);
+    const questionnaireSuccess = await answerQuestions(page, site);
 
-    const availabilityContainer = await getData(page);
+    const availabilityContainer = questionnaireSuccess
+        ? await getData(page)
+        : {};
 
     const results = {
         ...site.public,
         ...availabilityContainer,
         hasAvailability: Object.keys(availabilityContainer).length > 0,
     };
+
+    page.close();
+
     return results;
 }
 
@@ -56,35 +62,55 @@ async function answerQuestions(page, site) {
     // Simulate a not-too-slow human
     await page.waitForTimeout(800);
 
+    let firstPageSuccess = true;
+
     // Press "Next" button
-    await page.click("#next-btn");
-    await page.waitForNavigation();
+    Promise.all([
+        await page.click("#next-btn"),
+        await page.waitForNavigation().catch((error) => {
+            firstPageSuccess = false;
+            console.error(`First questionnaire page timed out: ${error}`);
+        }),
+    ]);
 
-    // Second page of questionnaire
-    await page.evaluate(() => {
-        const dropDowns = document.querySelectorAll(".ap-question.inputfield");
-        // Patient’s Relationship to Guarantor: Self
-        dropDowns[0].value = "ff8f0703-56b4-452c-9c0f-81c702412cab";
-        // Insurance type: medicare
-        dropDowns[1].value = "c34b0d40-e319-491d-9bab-b6c36d8b3dca";
-        // Subscriber I.D:  n/a
-        dropDowns[2].value = "n/a";
-        // Member I.D:  n/a
-        dropDowns[3].value = "n/a";
-    });
-    await page.waitForTimeout(800);
+    let secondPageSuccess = true;
 
-    // Do you have secondary insurance? No (to obviate the need to fill in more answers)
-    await page.evaluate(() => {
-        document.querySelectorAll("input[type=radio]")[1].checked = true;
-    });
-    // Simulate a not-too-slow human
-    await page.waitForTimeout(1200);
+    if (firstPageSuccess) {
+        // Second page of questionnaire
+        await page.evaluate(() => {
+            const dropDowns = document.querySelectorAll(
+                ".ap-question.inputfield"
+            );
+            // Patient’s Relationship to Guarantor: Self
+            dropDowns[0].value = "ff8f0703-56b4-452c-9c0f-81c702412cab";
+            // Insurance type: medicare
+            dropDowns[1].value = "c34b0d40-e319-491d-9bab-b6c36d8b3dca";
+            // Subscriber I.D:  n/a
+            dropDowns[2].value = "n/a";
+            // Member I.D:  n/a
+            dropDowns[3].value = "n/a";
+        });
+        await page.waitForTimeout(800);
 
-    await page.evaluate(() => {
-        document.querySelector("#next-btn").click();
-    });
-    await page.waitForNavigation();
+        // Do you have secondary insurance? No (to obviate the need to fill in more answers)
+        await page.evaluate(() => {
+            document.querySelectorAll("input[type=radio]")[1].checked = true;
+        });
+        // Simulate a not-too-slow human
+        await page.waitForTimeout(1200);
+
+        Promise.all([
+            await page.evaluate(() => {
+                document.querySelector("#next-btn").click();
+            }),
+            await page.waitForNavigation().catch((error) => {
+                secondPageSuccess = false;
+                console.error(`Second questionnaire page timed out: ${error}`);
+            }),
+        ]);
+    }
+
+    return secondPageSuccess;
 }
 
 async function getData(page) {
