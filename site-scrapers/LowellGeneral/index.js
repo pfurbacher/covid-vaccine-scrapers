@@ -1,7 +1,6 @@
 const { site } = require("./config");
 const utils = require("./utils");
 
-const fetch = require("node-fetch");
 const moment = require("moment");
 
 module.exports = async function GetAvailableAppointments(browser) {
@@ -36,15 +35,17 @@ async function ScrapeWebsiteData(browser, site) {
 }
 
 async function answerQuestions(page, site) {
-    /* */
     await page.goto(site.private.startUrl);
     await page.waitForSelector("button#next-btn");
     await page.waitForTimeout(900);
+
+    // First page of questionnaire:
     // Select "Dose 1"
     await page.evaluate(() => {
         const x = document.querySelector(".ap-question.inputfield ");
         x.value = "14d46b30-fa7a-455b-bc2e-2f481beca122";
     });
+    // Simulate a not-too-slow human
     await page.waitForTimeout(700);
     // Check the "Yes" for "I hereby attest under penalty of...."
     await page.evaluate(() => {
@@ -52,12 +53,14 @@ async function answerQuestions(page, site) {
             "input[value='c708da0f-05c7-4f18-9e3f-61bb0cf0a94a']"
         ).checked = true;
     });
+    // Simulate a not-too-slow human
     await page.waitForTimeout(800);
 
     // Press "Next" button
     await page.click("#next-btn");
     await page.waitForNavigation();
 
+    // Second page of questionnaire
     await page.evaluate(() => {
         const dropDowns = document.querySelectorAll(".ap-question.inputfield");
         // Patient’s Relationship to Guarantor: Self
@@ -66,22 +69,22 @@ async function answerQuestions(page, site) {
         dropDowns[1].value = "c34b0d40-e319-491d-9bab-b6c36d8b3dca";
         // Subscriber I.D:  n/a
         dropDowns[2].value = "n/a";
-        //  Member I.D:  n/a
+        // Member I.D:  n/a
         dropDowns[3].value = "n/a";
     });
     await page.waitForTimeout(800);
 
-    // Do you have secondary insurance?
+    // Do you have secondary insurance? No (to obviate the need to fill in more answers)
     await page.evaluate(() => {
         document.querySelectorAll("input[type=radio]")[1].checked = true;
     });
+    // Simulate a not-too-slow human
     await page.waitForTimeout(1200);
 
     await page.evaluate(() => {
         document.querySelector("#next-btn").click();
     });
     await page.waitForNavigation();
-    /* */
 }
 
 async function getData(page) {
@@ -89,9 +92,7 @@ async function getData(page) {
         availability: {},
         hasAvailability: false,
     };
-    // const fakeData = require("../../test/LowellGeneral/responseWithSlots.json");
-    // const data = null;
-    /* */
+
     const fetchMonths = utils.getFetchMonths(3);
 
     for (const month of fetchMonths) {
