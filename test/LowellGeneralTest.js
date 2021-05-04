@@ -1,9 +1,15 @@
-const { site } = require("../site-scrapers/LowellGeneral/config");
+/**
+ * Tests only cover functions in LowellGeneral/utils.js
+ * The scraper's fetches are not tested.
+ */
+
 const utils = require("../site-scrapers/LowellGeneral/utils");
-const moment = require("moment");
 const { expect } = require("chai");
 
-describe("LowellGeneral :: test getting slots from JSON response", function () {
+// Logging message indent
+const indent = "        ";
+
+describe("LowellGeneral :: test getting slots from saved JSON response", function () {
     it("should have slots aplenty", function () {
         const json = loadTestJsonDataFromFile(
             "LowellGeneral",
@@ -11,23 +17,27 @@ describe("LowellGeneral :: test getting slots from JSON response", function () {
         );
         const slotsMap = utils.getSlotsForMonth(json);
 
-        const expectedTotal = 5 + 7 + 12;
+        const expectedTotal = 24;
         let total = 0;
         slotsMap.forEach((value) => (total += value));
 
         expect(total).equals(expectedTotal);
 
-        const expectedDates = [...new Set(json.availableDays)];
-        const actualDates = [];
+        // "availableDays" is a list of the day numbers, one for each slot.
+        // That means there are many duplicates.
+        // Get a unique list of days by passing the array through a Set.
+        const expectedDays = [...new Set(json.availableDays)];
+        const actualDays = [];
         slotsMap.forEach((_, key) => {
-            const date = key.match(/\d{1,2}\/(\d{1,2})\/\d{2}/)[1];
-            actualDates.push(parseInt(date));
+            // Get the day value by splitting and taking the second item.
+            const date = key.split("/")[1];
+            actualDays.push(parseInt(date));
         });
-        console.log(`        ${actualDates}\n        ${expectedDates}`);
-        expect(actualDates).deep.equals(expectedDates);
+        console.log(`${indent}${actualDays}\n${indent}${expectedDays}`);
+        expect(actualDays).deep.equals(expectedDays);
     });
 
-    it("should have slots aplenty", function () {
+    it("should have 416 slots and day numbers should match", function () {
         const json = loadTestJsonDataFromFile(
             "LowellGeneral",
             "416-slots.json"
@@ -40,14 +50,19 @@ describe("LowellGeneral :: test getting slots from JSON response", function () {
 
         expect(total).equals(expectedTotal);
 
-        const expectedDates = [...new Set(json.availableDays)];
-        const actualDates = [];
-        slotsMap.forEach((value, key) => {
+        // "availableDays" is a list of the day numbers, one for each slot.
+        // That means there are many duplicates.
+        // Get a unique list by passing the array through a Set.
+        const expectedDays = [...new Set(json.availableDays)];
+        const actualDays = [];
+        slotsMap.forEach((_, key) => {
+            // Get the day value by splitting and taking the second item.
             const date = key.split("/")[1];
-            actualDates.push(parseInt(date));
+            actualDays.push(parseInt(date));
         });
-        console.log(`        ${actualDates}\n        ${expectedDates}`);
-        expect(actualDates).deep.equals(expectedDates);
+
+        console.log(`${indent}${actualDays}\n${indent}${expectedDays}`);
+        expect(actualDays).deep.equals(expectedDays);
     });
 });
 
@@ -55,7 +70,7 @@ describe("LowellGeneral :: test the month generation", function () {
     it("the getFetchMonths() should return 3 months", () => {
         const monthsAsMoments = utils.getFetchMonths(3);
         monthsAsMoments.forEach((month) =>
-            console.log(`        ${month.month() + 1}/${month.year()}`)
+            console.log(`${indent}${month.month() + 1}/${month.year()}`)
         );
         expect(monthsAsMoments.length).equals(3);
     });
