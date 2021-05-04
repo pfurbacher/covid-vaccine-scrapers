@@ -1,3 +1,8 @@
+/**
+ * util.js -- functions which don't involve fetching have been placed here
+ * so that they can be tested with mock data.
+ */
+
 const moment = require("moment");
 
 function getCalendarFetchUrl(aMoment) {
