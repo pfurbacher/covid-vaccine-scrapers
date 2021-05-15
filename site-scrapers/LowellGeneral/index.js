@@ -43,7 +43,7 @@ async function ScrapeWebsiteData(browser, site) {
 async function answerQuestions(page, site) {
     await page.goto(site.private.startUrl);
     await page.waitForSelector("button#next-btn");
-    await page.waitForTimeout(900);
+    await page.waitForTimeout(1200);
 
     // First page of questionnaire:
     // Select "Dose 1"
@@ -60,14 +60,14 @@ async function answerQuestions(page, site) {
         ).checked = true;
     });
     // Simulate a not-too-slow human
-    await page.waitForTimeout(800);
+    await page.waitForTimeout(2000);
 
     let firstPageSuccess = true;
 
     // Press "Next" button
     Promise.all([
         await page.click("#next-btn"),
-        await page.waitForNavigation().catch((error) => {
+        await page.waitForNavigation({ timeout: 10000 }).catch((error) => {
             firstPageSuccess = false;
             console.error(`First questionnaire page timed out: ${error}`);
         }),
@@ -90,14 +90,14 @@ async function answerQuestions(page, site) {
             // Member I.D:  n/a
             dropDowns[3].value = "n/a";
         });
-        await page.waitForTimeout(800);
+        await page.waitForTimeout(3000);
 
         // Do you have secondary insurance? No (to obviate the need to fill in more answers)
         await page.evaluate(() => {
             document.querySelectorAll("input[type=radio]")[1].checked = true;
         });
         // Simulate a not-too-slow human
-        await page.waitForTimeout(1200);
+        await page.waitForTimeout(2000);
 
         Promise.all([
             await page.evaluate(() => {
