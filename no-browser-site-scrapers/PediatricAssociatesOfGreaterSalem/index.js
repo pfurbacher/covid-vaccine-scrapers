@@ -5,9 +5,12 @@
  */
 
 const { site } = require("./config");
-const { getSearchAvailableDatesBody, getSlotsBodyJson } = require("./queries");
+const {
+    getSearchAvailableDatesBody,
+    getSearchSlotsBodyJson,
+} = require("./queries");
+const { getSlotCountFromDateAvailability } = require("./parseSearchSlotsJson");
 
-const https = require("https");
 const fetch = require("node-fetch");
 const moment = require("moment");
 
@@ -97,7 +100,12 @@ async function QuerySchedule(
             schedulingToken,
             date
         );
-        if (dateAvailability) {
+        if (dateAvailability.error) {
+            console.error(
+                `PAGS :: slotSearch failed: ${dateAvailability.error}. Reporting "hasAvailability" only.`
+            );
+            results.hasAvailability = true;
+        } else {
             const slots = getSlotCountFromDateAvailability(dateAvailability);
             results.availability[reformatDate(date)] = {
                 numberAvailableAppointments: slots,
@@ -172,7 +180,7 @@ async function searchAvailabilityDates(
 }
 
 async function fetchDateAvailability(bearerToken, schedulingToken, dateStr) {
-    const availableDatesJson = getSlotsBodyJson(dateStr);
+    const searchSlotsBodyJson = getSearchSlotsBodyJson(dateStr);
 
     // console.log(JSON.stringify(availableDatesJson));
     // const test = JSON.parse(availableDatesJson);
@@ -183,10 +191,12 @@ async function fetchDateAvailability(bearerToken, schedulingToken, dateStr) {
             headers: {
                 authorization: `Bearer ${bearerToken}`,
                 "Content-Type": "application/json",
-                // "Content-Length": availableDatesJson.length,
+                "context-id": "2804",
+                "request-context":
+                    "appId=cid-v1:be15676c-faee-42aa-ba50-dd49aed067e1",
                 "x-scheduling-jwt": schedulingToken,
             },
-            body: availableDatesJson,
+            body: searchSlotsBodyJson,
             method: "POST",
         }
     )
@@ -199,12 +209,6 @@ async function fetchDateAvailability(bearerToken, schedulingToken, dateStr) {
         );
 
     return response;
-}
-
-function getSlotCountFromDateAvailability(dateAvailabilityJson) {
-    // TODO: get actual slots data object from Chrome dev tools
-    // 10 is returned for debugging/development work.
-    return 10;
 }
 
 function reformatDate(dateStr) {
