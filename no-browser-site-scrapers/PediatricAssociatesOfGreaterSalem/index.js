@@ -1,5 +1,14 @@
+/**
+ * Ideas on getting site specific time slot counts. A good deal of work which
+ * might not be worth it a this late date.
+ * -- PF
+ */
+
 const { site } = require("./config");
+const { getSearchAvailableDatesBody, getSlotsBodyJson } = require("./queries");
+
 const https = require("https");
+const fetch = require("node-fetch");
 const moment = require("moment");
 
 // Set to true to see responses in the console.
@@ -12,12 +21,13 @@ module.exports = async function GetAvailableAppointments() {
     console.log("Pediatric Associates of Greater Salem starting.");
     try {
         return {
-            parentLocationName: "Pediatric Associates of Greater Salem",
+            parentLocationName:
+                "Pediatric Associates of Greater Salem and Beverly",
             timestamp: moment().format(),
             individualLocationData: await DoGetAvailableAppointments(),
         };
     } finally {
-        console.log("Pediatric Associates of Greater Salem done.");
+        console.log("Pediatric Associates of Greater Salem and Beverly done.");
     }
 };
 
@@ -56,15 +66,16 @@ async function QuerySchedule(
     graphQLUrl
 ) {
     // Get a bearer token
-    const bearerToken = await GetToken(bearerTokenUrl);
-    Debug("bearerToken", bearerToken);
+    const bearerToken = await getToken(bearerTokenUrl);
+    // Debug("bearerTokens equal? ", bearerToken == bearerToken2);
 
     // Get a JWT
-    const schedulingToken = await GetToken(schedulingTokenUrl);
-    Debug("schedulingToken", schedulingToken);
+    const schedulingToken = await getToken(schedulingTokenUrl);
 
-    // Issue the GetFilters GraphQL query
-    const responseData = await SearchAvailabilityDates(
+    // Debug("schedulingToken", schedulingToken);
+
+    // Issue the SearchAvailabilityDates GraphQL query
+    const responseData = await searchAvailabilityDates(
         days,
         graphQLUrl,
         bearerToken,
@@ -72,7 +83,46 @@ async function QuerySchedule(
     );
     Debug("responseData", responseData);
 
-    return ParseAvailabilityDates(responseData.data.searchAvailabilityDates);
+    const results = {
+        availability: {},
+        hasAvailability: false,
+    };
+
+    const dates = getDates(responseData);
+
+    // TODO: needs actual data to test.
+    for (const date of dates) {
+        const dateAvailability = await fetchDateAvailability(
+            bearerToken,
+            schedulingToken,
+            date
+        );
+        if (dateAvailability) {
+            const slots = getSlotCountFromDateAvailability(dateAvailability);
+            results.availability[reformatDate(date)] = {
+                numberAvailableAppointments: slots,
+                hasAvailability: true,
+            };
+        }
+    }
+
+    return results;
+}
+
+/**
+ *
+ * @param {JSON} responseData
+ * @returns Array of dates ('YYYY-MM-DD'). Empty array ([]) if none. Guaranteed not null.
+ */
+function getDates(responseData) {
+    const searchAvailabilityDates = responseData?.data?.searchAvailabilityDates;
+
+    const dates = searchAvailabilityDates
+        ? searchAvailabilityDates
+              .filter((d) => d.availability)
+              .map((d) => d.date)
+        : [];
+    return dates;
 }
 
 function Debug(...args) {
@@ -81,121 +131,82 @@ function Debug(...args) {
     }
 }
 
-function GetToken(url) {
-    return new Promise((resolve) => {
-        let response = "";
-        https.get(url, (res) => {
-            let body = "";
-            res.on("data", (chunk) => {
-                body += chunk;
-            });
-            res.on("end", () => {
-                response = JSON.parse(body);
-                resolve(response.token);
-            });
-        });
-    });
+async function getToken(url) {
+    const response = await fetch(url)
+        .then((res) => res.json())
+        .then((json) => {
+            return json;
+        })
+        .catch((error) => console.error(`error fetching token: ${error}`));
+
+    return response.token;
 }
 
-async function SearchAvailabilityDates(
+async function searchAvailabilityDates(
     days,
     url,
     bearerToken,
     schedulingToken
 ) {
-    const postData = JSON.stringify({
-        operationName: "SearchAvailabilityDates",
-        variables: {
-            locationIds: ["2804-102"],
-            practitionerIds: [],
-            specialty: "Unknown Provider",
-            serviceTypeTokens: [
-                // TODO: I am not sure what this GUID signifies or if it varies.
-                "codesystem.scheduling.athena.io/servicetype.canonical|49b8e757-0345-4923-9889-a3b57f05aed2",
-            ],
-            startAfter: Today(),
-            startBefore: DaysLater(days - 1),
-        },
-        query: SearchAvailabilityDatesQuery(),
-    });
+    const postBody = getSearchAvailableDatesBody(days);
 
-    const options = {
-        method: "POST",
+    const response = await fetch(url, {
+        method: "post",
+        body: postBody,
         headers: {
             authorization: `Bearer ${bearerToken}`,
             "Content-Type": "application/json",
-            "Content-Length": postData.length,
+            // "Content-Length": postBody.length,
             "x-scheduling-jwt": schedulingToken,
         },
-    };
+    })
+        .then((res) => res.json())
+        .then((json) => {
+            return json;
+        })
+        .catch((error) =>
+            console.error(`error fetching availabity dates: ${error}`)
+        );
 
-    const responseData = await Post(url, postData, options);
-    return JSON.parse(responseData);
+    return response;
 }
 
-function Today() {
-    // Today's date in format 2021-02-26T00:00:00-05:00 (ISO-8601)
-    return moment().startOf("day").format();
-}
+async function fetchDateAvailability(bearerToken, schedulingToken, dateStr) {
+    const availableDatesJson = getSlotsBodyJson(dateStr);
 
-function DaysLater(days) {
-    // The last second of "days" days later e.g. 2021-03-13T23:59:59-05:00
-    return moment().add(days, "days").endOf("day").format();
-}
+    // console.log(JSON.stringify(availableDatesJson));
+    // const test = JSON.parse(availableDatesJson);
 
-function SearchAvailabilityDatesQuery() {
-    return `query SearchAvailabilityDates($locationIds: [String!], $practitionerIds: [String!], $specialty: String, $serviceTypeTokens: [String!]!, $startAfter: String!, $startBefore: String!, $visitType: VisitType) {
-        searchAvailabilityDates(locationIds: $locationIds, practitionerIds: $practitionerIds, specialty: $specialty, serviceTypeTokens: $serviceTypeTokens, startAfter: $startAfter, startBefore: $startBefore, visitType: $visitType) {
-            date
-            availability
-            __typename
-        }}`;
-}
-
-function Post(url, postData, options) {
-    return new Promise((resolve) => {
-        const req = https.request(url, options, (res) => {
-            let body = "";
-            res.on("data", (chunk) => {
-                body += chunk;
-            });
-            res.on("end", () => {
-                if (res.statusCode >= 200 && res.statusCode < 300) {
-                    resolve(body);
-                } else {
-                    console.error(
-                        `Error status code [${res.statusCode}] returned: ${res.statusMessage}`
-                    );
-                    resolve();
-                }
-            });
-        });
-        req.write(postData);
-        req.on("error", (e) => {
-            console.error("Error making request: " + e);
-        });
-        req.end();
-    });
-}
-
-function ParseAvailabilityDates(availabilityDates) {
-    // Expected response like
-    // [
-    //     {"date":"2021-02-26","availability":false,"__typename":"Availability"},
-    //     ...
-    // ]
-    const availability = {};
-    let hasAvailability = false;
-    availabilityDates.forEach((availabilityDate) => {
-        if (availabilityDate.availability) {
-            availability[ReformatDate(availabilityDate.date)] = true;
-            hasAvailability = true;
+    const response = await fetch(
+        "https://framework-backend.scheduling.athena.io/v1/graphql",
+        {
+            headers: {
+                authorization: `Bearer ${bearerToken}`,
+                "Content-Type": "application/json",
+                // "Content-Length": availableDatesJson.length,
+                "x-scheduling-jwt": schedulingToken,
+            },
+            body: availableDatesJson,
+            method: "POST",
         }
-    });
+    )
+        .then((res) => res.json())
+        .then((json) => {
+            return json;
+        })
+        .catch((error) =>
+            console.error(`error fetching slot counts data: ${error}`)
+        );
 
-    return { availability: availability, hasAvailability: hasAvailability };
+    return response;
 }
 
-function ReformatDate(dateString) {
-    return moment(dateString).format("YYYY/MM/DD");
+function getSlotCountFromDateAvailability(dateAvailabilityJson) {
+    // TODO: get actual slots data object from Chrome dev tools
+    // 10 is returned for debugging/development work.
+    return 10;
+}
+
+function reformatDate(dateStr) {
+    return moment(`${dateStr}T00:00:00`).format("M/D/YYYY");
 }
