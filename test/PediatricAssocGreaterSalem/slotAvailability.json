@@ -1,0 +1,2438 @@
+{
+  "data": {
+    "searchSlots": [
+      {
+        "location": {
+          "reference": "Location/2804-102",
+          "resource": {
+            "id": "2804-102",
+            "name": "Pediatric Associates",
+            "address": {
+              "line": [
+                "30 Tozer Rd"
+              ],
+              "city": "BEVERLY",
+              "state": "MA",
+              "postalCode": "01915-5510",
+              "__typename": "Address"
+            },
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "9787453050",
+                "__typename": "ContactPoint"
+              }
+            ],
+            "timezone": "America/New_York",
+            "managingOrganization": null,
+            "__typename": "Location"
+          },
+          "__typename": "ActorReference"
+        },
+        "practitionerAvailability": [
+          {
+            "isTelehealth": false,
+            "practitioner": {
+              "reference": "Practitioner/2804-51",
+              "resource": {
+                "id": "2804-51",
+                "name": [
+                  {
+                    "text": "Pfizer",
+                    "__typename": "HumanName"
+                  }
+                ],
+                "__typename": "Practitioner"
+              },
+              "__typename": "ActorReference"
+            },
+            "availability": [
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI4M3xEVWFERWl3ZFU2MVJhR29vSURhQjZoSEVYLy8rN2F3dHpwYWFHNnBGUGtjPQ",
+                "start": "2021-05-29T09:00:00-04:00",
+                "end": "2021-05-29T09:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMxMnxWU050YmEzQktJQXNXeEM1aHkvVUd5dkxCMFY3NXprUmEraXNRcE1oNVhNPQ",
+                "start": "2021-05-29T09:00:00-04:00",
+                "end": "2021-05-29T09:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMxM3xEUHBVR29mOUpEZjEwSzQ1amYxYkhXN0dlUFVWcnk2ZTh6SWZXcndoQ3I4PQ",
+                "start": "2021-05-29T09:15:00-04:00",
+                "end": "2021-05-29T09:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDEzOXw0ZnhPd0p1ci9LYldWbEFMZ21rSnB4bGg1aVBtVS9iYUoxbXlUSEF1MjB3PQ",
+                "start": "2021-05-29T09:15:00-04:00",
+                "end": "2021-05-29T09:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIyNnxmMm9qNVpaN1k2VloxRHp1RXpXN3Q1MDB5YXZVVzFuQVl1WGw2b3A2VCtzPQ",
+                "start": "2021-05-29T09:15:00-04:00",
+                "end": "2021-05-29T09:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE5N3x3bzB3UDJub1JTUWd6ZWptblhDbGs2YmlHT09iSGlHenZCVG1KeU9RVDB3PQ",
+                "start": "2021-05-29T09:15:00-04:00",
+                "end": "2021-05-29T09:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM3MXxLbjYxRDRjRVhvYjdjd0hWdHhRVE1NMlZzUHlFTm12Ti8xQk5LTGEvVG5nPQ",
+                "start": "2021-05-29T09:15:00-04:00",
+                "end": "2021-05-29T09:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE2OHxDa1Vrdk5FbXU0V1lxbk9UUFZCczJKbFNnNnY3THcxSC82U25JUzJqT0dJPQ",
+                "start": "2021-05-29T09:15:00-04:00",
+                "end": "2021-05-29T09:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI4NHxTZDJqaXJwZFhsb0x5bndGZWJweWExVitIcEtNS0YyMFdpMjNRSEVYL1d3PQ",
+                "start": "2021-05-29T09:15:00-04:00",
+                "end": "2021-05-29T09:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI1NXxzakx4bW9IWmp3WnFLUHFESHhjSXVNUU5kM3l5cVRXN3BqSlFVZHFsL040PQ",
+                "start": "2021-05-29T09:15:00-04:00",
+                "end": "2021-05-29T09:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQwMHxGenN5VStvZkQ3OGJzYlFaRVpBZ2NYWGppR3crWXlNaXRQYmhaekZOdkNVPQ",
+                "start": "2021-05-29T09:15:00-04:00",
+                "end": "2021-05-29T09:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMxNHxGU3hRYkZEaGcrZ3Jna2lLa1NEOGUwY0VsUmt0YUxoUlljN0lhVXd3VnVvPQ",
+                "start": "2021-05-29T09:30:00-04:00",
+                "end": "2021-05-29T09:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM3MnxTVHA3ZlZ5c2pZbm9manQxWmdSbDRabGlZVjJaVG1nMTJTdGFySUx3OXMwPQ",
+                "start": "2021-05-29T09:30:00-04:00",
+                "end": "2021-05-29T09:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE5OHxOQVg4K3pWWjJKdUx1am1DcGZxanptdXRWWHlULzhieE9CNExyNGlWWmg0PQ",
+                "start": "2021-05-29T09:30:00-04:00",
+                "end": "2021-05-29T09:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI4NXxTWk12TFptOFA1Q1dmVVJNRDl6b2lVT2p5S3Jod2FubWNnR0xNczFvOStVPQ",
+                "start": "2021-05-29T09:30:00-04:00",
+                "end": "2021-05-29T09:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQwMXx1d0J2NDJ1RG9JSFNVUCtrVEo5NEx5akwrMjczUExrcnBPbGJrUWpZdUk4PQ",
+                "start": "2021-05-29T09:30:00-04:00",
+                "end": "2021-05-29T09:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE0MHxoQ3VRd1lrSTRENHJBWlhibUs4YlZrM21IbXJteGw2bnNMVE5oNUc4VS9BPQ",
+                "start": "2021-05-29T09:30:00-04:00",
+                "end": "2021-05-29T09:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM0M3x0bWVPS0gvV3ZHQlkwN2ZZR0RpNkdjMk9vay9aMXdhNGVENE5KQ2pJRXBrPQ",
+                "start": "2021-05-29T09:30:00-04:00",
+                "end": "2021-05-29T09:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIyN3wwU3BZLzhPcnN0RDNJYUFxQlppODc4dGpwcUJHNWsrTlA4RVFuSDBUVldJPQ",
+                "start": "2021-05-29T09:30:00-04:00",
+                "end": "2021-05-29T09:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE2OXxiQWp6bi9IK2krUlFrUVpqOTZ0SjhnZ2d4cTRXZEloQWtDN2NGSFYwbWFzPQ",
+                "start": "2021-05-29T09:30:00-04:00",
+                "end": "2021-05-29T09:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI1NnxBU0FUdjRkaDBHbVQyZEk1ZW9QbjQybkIwNFgycVI0R00yUkNUQ3FiMVNZPQ",
+                "start": "2021-05-29T09:30:00-04:00",
+                "end": "2021-05-29T09:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE3MHxNNEdZWUxrZGRnTVYrU1lHWEFOMzY3QjE2Tmc0OXJpeXNiTHIzSTYxeTFNPQ",
+                "start": "2021-05-29T09:45:00-04:00",
+                "end": "2021-05-29T10:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMxNXxTeXdGcGljQVpDV2s0REtXR1NYM09xcXlicU5KZkF4d1huNFUxZFJ4UFpRPQ",
+                "start": "2021-05-29T09:45:00-04:00",
+                "end": "2021-05-29T10:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI1N3xDblBCU3pYTGV5R05EWUhteENOSWora0hoVFZ6N0xvMFNvZDh4QkVBUDFJPQ",
+                "start": "2021-05-29T09:45:00-04:00",
+                "end": "2021-05-29T10:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE0MXxYT2svdk9OUWZXRmVZMnMrSGJIZHpRRTNZYnlhbFhpeFBUbzFMMGxVc2owPQ",
+                "start": "2021-05-29T09:45:00-04:00",
+                "end": "2021-05-29T10:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM3M3xqZkpmbmlLd0FJMzBlUHpuSm5tcG1tQjJ4a2U1ZjN3czVHZlo0NUlaUm1VPQ",
+                "start": "2021-05-29T09:45:00-04:00",
+                "end": "2021-05-29T10:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIyOHx2QmRVZndlS1B6b0J4T3QrcXUyYXV2RDdZT1JNRmdCMitqcEFGNnFxVEhzPQ",
+                "start": "2021-05-29T09:45:00-04:00",
+                "end": "2021-05-29T10:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQwMnxsd3BBRXJKS0R3aVJpREQrK1JiR012TkxUbFdvTlp4TFNGb2d4Q3o1ZTM0PQ",
+                "start": "2021-05-29T09:45:00-04:00",
+                "end": "2021-05-29T10:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM0NHwzTUlPUTM3cEEyQzBUQ1VzUjF3dHk4VXZjSzI2dGF3NmRtU3EvNEpabExFPQ",
+                "start": "2021-05-29T09:45:00-04:00",
+                "end": "2021-05-29T10:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE5OXxDeFlZUnVmZU9nR0VyNnIyamhPdnBHVGlxb2Fhcm1jc3RpMzJDdjZVS3JNPQ",
+                "start": "2021-05-29T09:45:00-04:00",
+                "end": "2021-05-29T10:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI4NnxVcy8wamtyRWZmRWtSTzA2Q3pYNlFNTENTM3hlMlNDU1B6bXZWOXUzK3dRPQ",
+                "start": "2021-05-29T09:45:00-04:00",
+                "end": "2021-05-29T10:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIyOXxCUjFmTndDdjlvTWxhMjFhc3JXL3lYcExnNmNEa1dPWVRoMXFHM2htcDYwPQ",
+                "start": "2021-05-29T10:00:00-04:00",
+                "end": "2021-05-29T10:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI1OHwxMjI2VmhrMjVmQWJOdlpvdStObDIzeUZvOEh1b3R6N3JMWjBTM1RlWWZjPQ",
+                "start": "2021-05-29T10:00:00-04:00",
+                "end": "2021-05-29T10:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM0NXxJSWx0UEhDRnRIREg1bmNJSDZHeVNXRFRJN0FHZFNHN0RmNGpFMEdsNi8wPQ",
+                "start": "2021-05-29T10:00:00-04:00",
+                "end": "2021-05-29T10:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM3NHxKZ3JOZ2FQcE80VmRtcVZzalFTSTQrcWtBM3Z5ZlpYWEF5Q29yT1NLVmJrPQ",
+                "start": "2021-05-29T10:00:00-04:00",
+                "end": "2021-05-29T10:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI4N3xQV2YrWXVoaCtHSGpLdDhjWmNycnhid0ZGWTNEeUtuenBTbUdNS0gvbVZRPQ",
+                "start": "2021-05-29T10:00:00-04:00",
+                "end": "2021-05-29T10:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMxNnxZMElMQnJldTZENjlGS2xDbmFKc1Ivd2ZaM0RvVHVLY25aMWpTR3pZWk53PQ",
+                "start": "2021-05-29T10:00:00-04:00",
+                "end": "2021-05-29T10:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMxN3x3c2M0YUJwbGZ1VEtmUUtGM1NxK0Vmb3Y1cWRGSkRyenViVDQxanlKQkQ4PQ",
+                "start": "2021-05-29T10:15:00-04:00",
+                "end": "2021-05-29T10:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM0Nnwxc3FvOTUwM3JkRmVhc1B1aTRRdkZwdlhtaHltY0gxMmQ4ZlhXSWRkakpNPQ",
+                "start": "2021-05-29T10:15:00-04:00",
+                "end": "2021-05-29T10:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI4OHwvRUpiT3hveHhmanlvUjVsNFhRV1lWUEcwSElMMWdhWDRXajM5dlRQTmlNPQ",
+                "start": "2021-05-29T10:15:00-04:00",
+                "end": "2021-05-29T10:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIzMHxNRStZOFYzOWYvRnQyTWxxSmJtbmgycjVnamJsSWk3V0hwUkpkWXo2ZUhzPQ",
+                "start": "2021-05-29T10:15:00-04:00",
+                "end": "2021-05-29T10:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQwNHxKaUxYMXFIOHdDa09UTm5aaldpQUM3TWs1YTYwdzJ1eTlwVG1tTFRvdmtnPQ",
+                "start": "2021-05-29T10:15:00-04:00",
+                "end": "2021-05-29T10:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE3MnwwVFROdThzTWRrSGpnZTJVdW5JVVNtcUhvbHI1VE9FQ2hOR3FWWXh4bmRNPQ",
+                "start": "2021-05-29T10:15:00-04:00",
+                "end": "2021-05-29T10:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIwMXx2bElYMEttcEhzNVRUT2NGNFpXVXhzRjFUbklaWTdnTmxNc1d5aUNJWjJJPQ",
+                "start": "2021-05-29T10:15:00-04:00",
+                "end": "2021-05-29T10:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE0M3xzY0I4OExVZWJyOHFGdzgyS3JNd0p5OFJGUXlvRTg3UzhvN1AzdG55Q204PQ",
+                "start": "2021-05-29T10:15:00-04:00",
+                "end": "2021-05-29T10:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI1OXxyMmZWcXR3SnlYMEJsRHdMdndrQnd0M1ZkS0Q3cUVJMi92YjFYb0xYSEFZPQ",
+                "start": "2021-05-29T10:15:00-04:00",
+                "end": "2021-05-29T10:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM3NXxacno0bENiSmxYcGM5NmVmT2xKajZSNXd1YTd2L0V0N1ZGWWdDZzZLU25FPQ",
+                "start": "2021-05-29T10:15:00-04:00",
+                "end": "2021-05-29T10:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMxOHxEMnc5c2Z3WVA0TS9oekd2YmgyZ2lNeTRpdjduRTRKSFJVbmkwMUxoOW8wPQ",
+                "start": "2021-05-29T10:30:00-04:00",
+                "end": "2021-05-29T10:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI4OXxNU0NLeStuQ2ZXZnZoLzIrOTlqZEJIdUFld2N2blI3T0pRMGJKVjNrSDhVPQ",
+                "start": "2021-05-29T10:30:00-04:00",
+                "end": "2021-05-29T10:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQwNXx0TE5wZnBacGtxejBMdjN6cyszOFJEaHNVRkpKNjloZ2ZNbTJwWlJtZTJzPQ",
+                "start": "2021-05-29T10:30:00-04:00",
+                "end": "2021-05-29T10:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIwMnxUcmtoa3ZiWUFFNHZLSURqL2taY2FIQnpPZjlBQzFJVzR3MnBRc08vLzBnPQ",
+                "start": "2021-05-29T10:30:00-04:00",
+                "end": "2021-05-29T10:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE0NHxHOU51Q2pWdmF4N3NyeklkY3d5cXFMS2RKc01ZREx0dkdFZmVhNzFSOTRrPQ",
+                "start": "2021-05-29T10:30:00-04:00",
+                "end": "2021-05-29T10:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM3Nnw5SjJOcWNzU1U1U1dEVEZBMGQ4Q2FTSlBwQjFOa2dVMXRpOUZ1NXVSUXpZPQ",
+                "start": "2021-05-29T10:30:00-04:00",
+                "end": "2021-05-29T10:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM0N3xlaUNFdDBGdGlFemZ5ZGoxUk9QZnA1ell0RVZnQkhiUGNucHo2bHZ5bGVFPQ",
+                "start": "2021-05-29T10:30:00-04:00",
+                "end": "2021-05-29T10:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIzMXwzQ295TWl5ZGM5bDhSZHpwWXdVUXJmdGhKNDJTMU5WTTBpUWdMOWt3S3ljPQ",
+                "start": "2021-05-29T10:30:00-04:00",
+                "end": "2021-05-29T10:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE3M3xHU29lamdOcnNZZ25BWWZTRUZNMkY1SGRZN3lKMHNoWVdWNlpOeURReTNnPQ",
+                "start": "2021-05-29T10:30:00-04:00",
+                "end": "2021-05-29T10:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI2MHxsc21UZy9NaklCclpSTk15ZUZpVE5ZWDdvdTZScGN2dnAwMzlIM2RPeGtrPQ",
+                "start": "2021-05-29T10:30:00-04:00",
+                "end": "2021-05-29T10:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMxOXxpbXJISUhZUHhlMW50U0Y4UklKSDVXZE5IdlN1TXExWTdQdEp0MXREVDZzPQ",
+                "start": "2021-05-29T10:45:00-04:00",
+                "end": "2021-05-29T11:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM0OHxjZm1vQ1ZldUs4NUZKUVJFSlZNNnREbHp3WWR1Yk1Uak1zL3B3dGYwcWNjPQ",
+                "start": "2021-05-29T10:45:00-04:00",
+                "end": "2021-05-29T11:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQwNnw3OVYrSnRaeitRT1dzbyt2aHJldTFITHlvNTBrdzQvMXZMR3Y1YkJtcnlzPQ",
+                "start": "2021-05-29T10:45:00-04:00",
+                "end": "2021-05-29T11:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI5MHxVUTNqZTRtbnFMUVdDUkRJbDY0bk9tL3BYWnBYWGhzNDFpRTBjL1pVdXdZPQ",
+                "start": "2021-05-29T10:45:00-04:00",
+                "end": "2021-05-29T11:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI2MXx5UlorVzhyaFpFb09LVEd6a1dFaHc3YmpBdE93M0ZDa2lnaCtZbFUxNTZZPQ",
+                "start": "2021-05-29T10:45:00-04:00",
+                "end": "2021-05-29T11:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIwM3xpWnVOZUo4K0kvTmJTdzRjdlAxd09vODVjZS85dmtKYVRiaGJXbVcyQ3RrPQ",
+                "start": "2021-05-29T10:45:00-04:00",
+                "end": "2021-05-29T11:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE3NHxYajFod3VxbE14Z0RWaHNKLzVpcy9qK0lEb0JEdXdMcnkvbWJTaEpEdDdJPQ",
+                "start": "2021-05-29T10:45:00-04:00",
+                "end": "2021-05-29T11:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIzMnx6NllmdmdtYTlLTktITTFiNFhGbXVlekMyT1M5Rk16VmYxV293WXBaRTg4PQ",
+                "start": "2021-05-29T10:45:00-04:00",
+                "end": "2021-05-29T11:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE0NXxSeG5VVGxUdzlqM1VkQi9BZFU4L25SSWpmYTI3bFZjdmlsb2twM0lTSDhRPQ",
+                "start": "2021-05-29T10:45:00-04:00",
+                "end": "2021-05-29T11:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM3N3xLRGQ0eFVvZ3lFbzZCQmdFazczVEhBS0NPVFBmWWErTXVlNk5KaHM2WVBzPQ",
+                "start": "2021-05-29T10:45:00-04:00",
+                "end": "2021-05-29T11:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIzM3xsRURIODRuMXo5NUZ3TTJSOGVsM0xma1QrVER2RWRpVnAwMmNrYzBiUkRnPQ",
+                "start": "2021-05-29T11:00:00-04:00",
+                "end": "2021-05-29T11:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI5MXxWOW1SMko3NHJlVEFCa2F2YWlMelZ0Y3VSaFlaUk1STG9BdTZGNzROZGNjPQ",
+                "start": "2021-05-29T11:00:00-04:00",
+                "end": "2021-05-29T11:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQwN3xCelJKeE5ZdGt6TnU5QURyM2VLb2xYSXRuSW5icllxaFdNdk9mcVM3enBFPQ",
+                "start": "2021-05-29T11:00:00-04:00",
+                "end": "2021-05-29T11:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM0OXxQVnFDaVZHVVFxNTR0VnVPaHBOMW9RdytTN0FSWURpQ1lZNkI4UGpOM1BjPQ",
+                "start": "2021-05-29T11:00:00-04:00",
+                "end": "2021-05-29T11:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI2Mnxya1E2YTlkdDl4bE9TQ3RERjI2YUxTRFNieU8vZXdhS1ZDUkFjbE9wTXB3PQ",
+                "start": "2021-05-29T11:00:00-04:00",
+                "end": "2021-05-29T11:15:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI2M3xjcEtrNkxlVEhvdGIzeWp5b3pEbURCRmg3TkpFNFlmVUFYNkwweml1TGgwPQ",
+                "start": "2021-05-29T11:15:00-04:00",
+                "end": "2021-05-29T11:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE3Nnx2bHF3RVAvZ3pESFVxWVNJRDJPOU4xVHVWaVE1b2JSMWUrajJjRDR0RHVRPQ",
+                "start": "2021-05-29T11:15:00-04:00",
+                "end": "2021-05-29T11:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM1MHw3VllRSWI4LzE0cG5JdDIrY3pKN29BUklVT2JiZUl6YllUOWlKSU1ONks0PQ",
+                "start": "2021-05-29T11:15:00-04:00",
+                "end": "2021-05-29T11:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE0N3xyRG9TNW9kR3pwMVdUWVZNWi8wOUZ1cGR1NjVCbEQydE95SE1SSWVpSnhzPQ",
+                "start": "2021-05-29T11:15:00-04:00",
+                "end": "2021-05-29T11:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMyMXx1MURaQmlhcU93NWMvM0djNnBKa0RqN09JNzZpUXpVaUo5WDVYT1Z1dzZrPQ",
+                "start": "2021-05-29T11:15:00-04:00",
+                "end": "2021-05-29T11:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIwNXxQZENOcVcweXZSalhwOTRXT3hFQ2RkckZkdWJpZWNsU3NjQ1VNMFNEYTI0PQ",
+                "start": "2021-05-29T11:15:00-04:00",
+                "end": "2021-05-29T11:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI5MnxRVlVGOEovbWRnMmd1T3F5QnpnWHp6WndybmRGQlhmNzloOGhNM05XS0xjPQ",
+                "start": "2021-05-29T11:15:00-04:00",
+                "end": "2021-05-29T11:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIzNHxBdW1MK3h2QnA4bWsrZkNvN1Zha0Z6QXhPdHZoVTQyNklFSWtjK2gyT2w4PQ",
+                "start": "2021-05-29T11:15:00-04:00",
+                "end": "2021-05-29T11:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQwOHxDTFJPOG1FQmRIUE1GZUVKcHRMQ0psdDFIVzZOcE1CNU5tbll4Qll6dnVjPQ",
+                "start": "2021-05-29T11:15:00-04:00",
+                "end": "2021-05-29T11:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM3OXw5LzV6VWlLQmVmZThwd09YRlRIaUFjVXhhRTRQWjI4T0t0Wk11NUJ3ckN3PQ",
+                "start": "2021-05-29T11:15:00-04:00",
+                "end": "2021-05-29T11:30:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE0OHxBcFlEQTZPMGxaT050OEVWbmtzbkxzNHR1UG01bUlMY3BHZGNuUytQL0xrPQ",
+                "start": "2021-05-29T11:30:00-04:00",
+                "end": "2021-05-29T11:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI2NHxKZmJuM0NpNG5LVURVVWdvaFRFcjU2bWw5NkdBOVdzUTRUZ3Bjd2xjM2JzPQ",
+                "start": "2021-05-29T11:30:00-04:00",
+                "end": "2021-05-29T11:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE3N3xKdFNIY1IrbHViNkpsWUJwRHlnQktyOTY4djQ4cnBWZWFjSnVlSzUwR3NVPQ",
+                "start": "2021-05-29T11:30:00-04:00",
+                "end": "2021-05-29T11:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMyMnxDU09sNjBqSkNFTjhmTDFLRHNCNDQ4WmJpN3dFc29sdnJCNk5yZW5ZQTFvPQ",
+                "start": "2021-05-29T11:30:00-04:00",
+                "end": "2021-05-29T11:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIwNnxhMmJNQ0FPVnMrTCtNZ3FCbjhzamRmeTFvTW1xazJCdVZrYkdwY3JOamtvPQ",
+                "start": "2021-05-29T11:30:00-04:00",
+                "end": "2021-05-29T11:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM4MHx3dlpTeWM3aWNPMVJuY0svNHJZZUhMSVM1RjQ1dWJWbHYzS0FnNE02Y21rPQ",
+                "start": "2021-05-29T11:30:00-04:00",
+                "end": "2021-05-29T11:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIzNXxhOVlxWWpOVjU5d2VpUUFFbm5WSGZPWFBsaU82aERKNm1wZFdYUE0rV2ZZPQ",
+                "start": "2021-05-29T11:30:00-04:00",
+                "end": "2021-05-29T11:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM1MXw3VjIwbllyMkROamlCcEJidXdocHljdjVVMkVzd0tqZWtPY2sxMUpYY01zPQ",
+                "start": "2021-05-29T11:30:00-04:00",
+                "end": "2021-05-29T11:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQwOXxjN1VWb2NLOG83ZHhFNGdJSTNqTWpBSVN5cmNZcFFBMU9scUxGeUZnNnpZPQ",
+                "start": "2021-05-29T11:30:00-04:00",
+                "end": "2021-05-29T11:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE3OHxhM0NjZEtiT09XNE5FRjRobUxmL21HUXBhV0luQWEwVmtPMEZDWEhmTWFBPQ",
+                "start": "2021-05-29T11:45:00-04:00",
+                "end": "2021-05-29T12:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMyM3xkVGk2eXovYW9yOEdnQlAvRDgwVVJ5bThwSGdRL256VHNzWGxrTlk2Z29BPQ",
+                "start": "2021-05-29T11:45:00-04:00",
+                "end": "2021-05-29T12:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM1Mnx2MEFSOE9XZGkrT0syM09wYkRZOGtPaHRSNUxpd0NuOEN1S0JzWFNjVmg4PQ",
+                "start": "2021-05-29T11:45:00-04:00",
+                "end": "2021-05-29T12:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI5NHxsc3doTGJzZE9LT0JLVHNzOTkzRXFyZm1yVGJSdEFCbllRbGcyaUs3bnNvPQ",
+                "start": "2021-05-29T11:45:00-04:00",
+                "end": "2021-05-29T12:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIzNnx5M0dSUVYxYStPOVhCTnZleVV1THZucFhEWlppZDZ1ZExhWUV1OEFCdm1RPQ",
+                "start": "2021-05-29T11:45:00-04:00",
+                "end": "2021-05-29T12:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI2NXxuR2ZSMUZNNTJGcDhieWhyczRKOHpMYlBwcE9Hb2pGS0F5ekM1S245UEJzPQ",
+                "start": "2021-05-29T11:45:00-04:00",
+                "end": "2021-05-29T12:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM4MXxaMXA2OGZ0OG9NakdSaUZEd1IrL1BjM0l0RFRXb1U0dU02SW95cGpSY1VVPQ",
+                "start": "2021-05-29T11:45:00-04:00",
+                "end": "2021-05-29T12:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIwN3wvNmRjM1loNFpQbFZmdk93cnBEYzB3dkg0SXZaNWZBa1pxZGVab0M5QjhNPQ",
+                "start": "2021-05-29T11:45:00-04:00",
+                "end": "2021-05-29T12:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQxMHxCMUZIR080QkQyRVBHVm1tQ3F5RGRibGVjdFVsbGJuMzNaVzVscm9EOUlBPQ",
+                "start": "2021-05-29T11:45:00-04:00",
+                "end": "2021-05-29T12:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIzN3xqQnVYdk92MnpqbzQ1RER4WTJHWVFRSU8wVnpQYVhlOCt3V05xa1JJZW9NPQ",
+                "start": "2021-05-29T12:30:00-04:00",
+                "end": "2021-05-29T12:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQxMXxkQVRMZ0pjMmtQeTFZZ0I1UFd4ZXl0MmxTZFFWMThjZjJZSXJrc0Qra1pzPQ",
+                "start": "2021-05-29T12:30:00-04:00",
+                "end": "2021-05-29T12:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI2Nnx1cWh0Q05TdXQxaS9RYk44dGVTbFAyZkg4cEpMV1NTQzg4cEtQMk96ZUVvPQ",
+                "start": "2021-05-29T12:30:00-04:00",
+                "end": "2021-05-29T12:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE3OXx5WDduZFIrVGt2L2pKZ0xCWHo3cW5IYlcxZFQzQVBxNE9mNFN1ZklKUmUwPQ",
+                "start": "2021-05-29T12:30:00-04:00",
+                "end": "2021-05-29T12:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM4Mnx0S2tMUjVGSmJicW1hbUdobEZPQXVQT3lYaWppdWttNVY3WnZZei9VcG04PQ",
+                "start": "2021-05-29T12:30:00-04:00",
+                "end": "2021-05-29T12:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI5NXxCcU1zR1Z0Sm56L2h4UU9EVkpXVVdFa2UzOG1ISmRRQ2phdjRudTlhNU5zPQ",
+                "start": "2021-05-29T12:30:00-04:00",
+                "end": "2021-05-29T12:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE1MHxoT3pTcjZsRDEzOVM3YXViejNTZjU1bXdWUjh6R2xWZjVpc1V4d1VrTFBJPQ",
+                "start": "2021-05-29T12:30:00-04:00",
+                "end": "2021-05-29T12:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMyNHxCOGVZT3FETTVQOVZGUDNFZVJ3eHNEK3JoNXZ0YXpqTVl4RXN3OHU1ZWtzPQ",
+                "start": "2021-05-29T12:30:00-04:00",
+                "end": "2021-05-29T12:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM1M3xtTy90WXlLdmV2ZWNHQVpRWStWeTNzaWNxZmNUTmJCTGVMQm9UYkhMV084PQ",
+                "start": "2021-05-29T12:30:00-04:00",
+                "end": "2021-05-29T12:45:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIzOHxwRE1hNWV0dmpNOUZ2L1QwdDd1a2lTVVVWeTRXclc4d2tLenhiRWxWWElzPQ",
+                "start": "2021-05-29T12:45:00-04:00",
+                "end": "2021-05-29T13:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDMyNXxFQTR1MTlnNnJKOFBvd0lpcmRqVFBqZGJUL2M0N3N6OVpRNk1jWW5uTXpnPQ",
+                "start": "2021-05-29T12:45:00-04:00",
+                "end": "2021-05-29T13:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI5NnxKVUV6cnFQZ0J4T1I0cE1JOTAyd2lLTTY4L0tlMnpwOHNxaFhZOVMwOGVzPQ",
+                "start": "2021-05-29T12:45:00-04:00",
+                "end": "2021-05-29T13:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM1NHxEdlVBSmwxS0QzR3FjeXhRbk9Md2hZcEU2Q1cxODlSWm5IVHRjYUkxaitnPQ",
+                "start": "2021-05-29T12:45:00-04:00",
+                "end": "2021-05-29T13:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE1MXxWSThGOTVJeGhXRjRvT25ZNVhQdXkvOVA0T00rSjRySXhiU2d4KzNwQzlrPQ",
+                "start": "2021-05-29T12:45:00-04:00",
+                "end": "2021-05-29T13:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDE4MHxDbk9RTlZ1cmNESTFNZGo2MGsraVlWME1GK2ZweEl6S3BDYXJzSW1nQ09ZPQ",
+                "start": "2021-05-29T12:45:00-04:00",
+                "end": "2021-05-29T13:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDQxMnxqZWRpa0dqUEZTNGkvK3h1V3RjZmZRUU1mYWRkMm5vTkI3V1FhNzhCUVMwPQ",
+                "start": "2021-05-29T12:45:00-04:00",
+                "end": "2021-05-29T13:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDI2N3xRa3BBaHhzNXAxTWhxcGVhcjFDZG5VWTFPaHFUMWJ2c0Q5QWROOUJYc2FFPQ",
+                "start": "2021-05-29T12:45:00-04:00",
+                "end": "2021-05-29T13:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDIwOXwzWWdzcnRjYlpKNjJCZEZPeVpldzExY3ExL2RRUE9GSWNTenFPUjIxeDhRPQ",
+                "start": "2021-05-29T12:45:00-04:00",
+                "end": "2021-05-29T13:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              },
+              {
+                "id": "MjgwNC0xMDItNTEuMTYzMDM4M3xNZENTamhVMVA5SUFaVXkrcHZxWnVRT2N3dEdyOUVmOURnOWJyMjFJeEpBPQ",
+                "start": "2021-05-29T12:45:00-04:00",
+                "end": "2021-05-29T13:00:00-04:00",
+                "status": "free",
+                "serviceType": [
+                  {
+                    "text": "COVID-19 Vaccine Initial",
+                    "coding": [
+                      {
+                        "code": "49b8e757-0345-4923-9889-a3b57f05aed2",
+                        "system": "codesystem.scheduling.athena.io/servicetype.canonical",
+                        "__typename": "Coding"
+                      }
+                    ],
+                    "__typename": "ServiceType"
+                  }
+                ],
+                "__typename": "Slot"
+              }
+            ],
+            "__typename": "PractitionerAvailability"
+          }
+        ],
+        "__typename": "ScheduleAvailability"
+      }
+    ]
+  }
+}
